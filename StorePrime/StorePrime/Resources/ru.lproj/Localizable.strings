@@ -6,6 +6,10 @@
   
 */
 
+"male_string" = "Мужчина";
+"female_string" = "Женщина";
+
+"sign_up_label" = "Регистрация";
 "name_label" = "Имя";
 "surname_label" = "Фамилия";
 "date_of_birth_label" = "Дата рождения";
@@ -14,3 +18,20 @@
 "phone_number_label" = "Телефон";
 "email_label" = "Email";
 "password_label" = "Пароль";
+"already_register_label" = "Уже есть аккаунт?";
+"or_label" = "ИЛИ";
+
+"name_textfield" = "Введите имя";
+"surname_textfield" = "Введите фамилию";
+"date_of_birth_textfield" = "дд.мм.гггг";
+"address_textfield" = "Введите адрес";
+"phone_number_textfield" = "+7(___)-___-__-__";
+"email_textfield" = "Введите email";
+"password_textfield" = "Введите пароль";
+
+"sign_up_button" = "Зарегистрироваться";
+"sign_in_button" = "Войти";
+
+"sign_up_seller_button" = "Зарегистрироваться как продавец";
+
+

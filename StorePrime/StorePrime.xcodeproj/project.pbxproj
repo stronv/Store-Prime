@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41159E0B550347552852DC83 /* Pods_StorePrime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6B988E6D8DA4A6EF91100 /* Pods_StorePrime.framework */; };
+		7CDD53C82A5315FC00D21885 /* UIbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53C72A5315FC00D21885 /* UIbutton.swift */; };
+		7CDD53CE2A53285100D21885 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53CD2A53285100D21885 /* UIViewController.swift */; };
 		7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D272A51D33D00AC979B /* AppDelegate.swift */; };
 		7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D292A51D33D00AC979B /* SceneDelegate.swift */; };
 		7CF87D2C2A51D33D00AC979B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D2B2A51D33D00AC979B /* ViewController.swift */; };
@@ -50,6 +52,9 @@
 		7CF87D9B2A52158100AC979B /* Exo2-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF87D9A2A52158100AC979B /* Exo2-ExtraLight.ttf */; };
 		7CF87D9C2A52158100AC979B /* Exo2-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF87D9A2A52158100AC979B /* Exo2-ExtraLight.ttf */; };
 		7CF87D9D2A52158100AC979B /* Exo2-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF87D9A2A52158100AC979B /* Exo2-ExtraLight.ttf */; };
+		7CF87D9F2A52EA5E00AC979B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D9E2A52EA5E00AC979B /* UIColor.swift */; };
+		7CF87DA02A52EA5E00AC979B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D9E2A52EA5E00AC979B /* UIColor.swift */; };
+		7CF87DA12A52EA5E00AC979B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D9E2A52EA5E00AC979B /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7CDD53C72A5315FC00D21885 /* UIbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIbutton.swift; sourceTree = "<group>"; };
+		7CDD53CD2A53285100D21885 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		7CF87D242A51D33D00AC979B /* StorePrime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorePrime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF87D272A51D33D00AC979B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF87D292A51D33D00AC979B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +103,7 @@
 		7CF87D892A51DA1200AC979B /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7CF87D962A52130500AC979B /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		7CF87D9A2A52158100AC979B /* Exo2-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Exo2-ExtraLight.ttf"; path = "../../../../../../../Downloads/Exo_2/static/Exo2-ExtraLight.ttf"; sourceTree = "<group>"; };
+		7CF87D9E2A52EA5E00AC979B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7D149F7C633D95ECAD03B4FA /* Pods-StorePrime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorePrime.debug.xcconfig"; path = "Target Support Files/Pods-StorePrime/Pods-StorePrime.debug.xcconfig"; sourceTree = "<group>"; };
 		9E3D86B95D9D2FDA86B76F66 /* Pods-StorePrime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StorePrime.release.xcconfig"; path = "Target Support Files/Pods-StorePrime/Pods-StorePrime.release.xcconfig"; sourceTree = "<group>"; };
 		ADF6B988E6D8DA4A6EF91100 /* Pods_StorePrime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StorePrime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +252,9 @@
 			children = (
 				7CF87D852A51D8FA00AC979B /* String.swift */,
 				7CF87D962A52130500AC979B /* UITextField.swift */,
+				7CF87D9E2A52EA5E00AC979B /* UIColor.swift */,
+				7CDD53C72A5315FC00D21885 /* UIbutton.swift */,
+				7CDD53CD2A53285100D21885 /* UIViewController.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -476,9 +487,12 @@
 				7CF87D6F2A51D53000AC979B /* Coordinator.swift in Sources */,
 				7CF87D792A51D5EB00AC979B /* RegistrationViewController.swift in Sources */,
 				7CF87D8A2A51DA1200AC979B /* Fonts.swift in Sources */,
+				7CDD53C82A5315FC00D21885 /* UIbutton.swift in Sources */,
+				7CF87D9F2A52EA5E00AC979B /* UIColor.swift in Sources */,
 				7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */,
 				7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */,
 				7CF87D972A52130500AC979B /* UITextField.swift in Sources */,
+				7CDD53CE2A53285100D21885 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +509,7 @@
 				7CF87D872A51D8FA00AC979B /* String.swift in Sources */,
 				7CF87D422A51D33D00AC979B /* StorePrimeTests.swift in Sources */,
 				7CF87D822A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */,
+				7CF87DA02A52EA5E00AC979B /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +524,7 @@
 				7CF87D4E2A51D33D00AC979B /* StorePrimeUITestsLaunchTests.swift in Sources */,
 				7CF87D4C2A51D33D00AC979B /* StorePrimeUITests.swift in Sources */,
 				7CF87D712A51D53000AC979B /* Coordinator.swift in Sources */,
+				7CF87DA12A52EA5E00AC979B /* UIColor.swift in Sources */,
 				7CF87D882A51D8FA00AC979B /* String.swift in Sources */,
 				7CF87D8C2A51DA1200AC979B /* Fonts.swift in Sources */,
 				7CF87D7B2A51D5EB00AC979B /* RegistrationViewController.swift in Sources */,

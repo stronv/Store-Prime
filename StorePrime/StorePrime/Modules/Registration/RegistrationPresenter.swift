@@ -13,7 +13,6 @@ protocol RegistrationPresenterProtocol {
 
 class RegistrationPresenter: RegistrationPresenterProtocol {
     private let moduleOutput: RegistrationCoordinatorProtocol
-    
     private weak var view: RegistrationViewControllerProtocol?
     
     init(_ moduleOutput: RegistrationCoordinatorProtocol, view: RegistrationViewControllerProtocol) {
