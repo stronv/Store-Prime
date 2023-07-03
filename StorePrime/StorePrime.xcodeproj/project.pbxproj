@@ -8,11 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		41159E0B550347552852DC83 /* Pods_StorePrime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6B988E6D8DA4A6EF91100 /* Pods_StorePrime.framework */; };
+		7CBA01042A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
+		7CBA01052A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
+		7CBA01062A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
+		7CBA01072A53698800FFC21F /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01022A53698800FFC21F /* CartPresenter.swift */; };
+		7CBA01082A53698800FFC21F /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01022A53698800FFC21F /* CartPresenter.swift */; };
+		7CBA01092A53698800FFC21F /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01022A53698800FFC21F /* CartPresenter.swift */; };
+		7CBA010A2A53698800FFC21F /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01032A53698800FFC21F /* CartCoordinator.swift */; };
+		7CBA010B2A53698800FFC21F /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01032A53698800FFC21F /* CartCoordinator.swift */; };
+		7CBA010C2A53698800FFC21F /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01032A53698800FFC21F /* CartCoordinator.swift */; };
 		7CDD53C82A5315FC00D21885 /* UIbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53C72A5315FC00D21885 /* UIbutton.swift */; };
 		7CDD53CE2A53285100D21885 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53CD2A53285100D21885 /* UIViewController.swift */; };
+		7CDD53D02A53593E00D21885 /* MainTapBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53CF2A53593E00D21885 /* MainTapBarCoordinator.swift */; };
+		7CDD53D42A5363E600D21885 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53D32A5363E600D21885 /* MainPageViewController.swift */; };
+		7CDD53D62A53640300D21885 /* MainPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53D52A53640300D21885 /* MainPageCoordinator.swift */; };
+		7CDD53D82A53640C00D21885 /* MainPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53D72A53640C00D21885 /* MainPagePresenter.swift */; };
+		7CDD53DB2A5366BE00D21885 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53DA2A5366BE00D21885 /* SearchCoordinator.swift */; };
+		7CDD53DD2A53672B00D21885 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53DC2A53672B00D21885 /* SearchViewController.swift */; };
+		7CDD53DF2A53676E00D21885 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53DE2A53676E00D21885 /* SearchPresenter.swift */; };
 		7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D272A51D33D00AC979B /* AppDelegate.swift */; };
 		7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D292A51D33D00AC979B /* SceneDelegate.swift */; };
-		7CF87D2C2A51D33D00AC979B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D2B2A51D33D00AC979B /* ViewController.swift */; };
 		7CF87D322A51D33D00AC979B /* StorePrime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D302A51D33D00AC979B /* StorePrime.xcdatamodeld */; };
 		7CF87D342A51D33D00AC979B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF87D332A51D33D00AC979B /* Assets.xcassets */; };
 		7CF87D372A51D33D00AC979B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF87D352A51D33D00AC979B /* LaunchScreen.storyboard */; };
@@ -75,12 +90,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7CBA01012A53698800FFC21F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		7CBA01022A53698800FFC21F /* CartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
+		7CBA01032A53698800FFC21F /* CartCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
 		7CDD53C72A5315FC00D21885 /* UIbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIbutton.swift; sourceTree = "<group>"; };
 		7CDD53CD2A53285100D21885 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		7CDD53CF2A53593E00D21885 /* MainTapBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTapBarCoordinator.swift; sourceTree = "<group>"; };
+		7CDD53D32A5363E600D21885 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		7CDD53D52A53640300D21885 /* MainPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCoordinator.swift; sourceTree = "<group>"; };
+		7CDD53D72A53640C00D21885 /* MainPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPagePresenter.swift; sourceTree = "<group>"; };
+		7CDD53DA2A5366BE00D21885 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		7CDD53DC2A53672B00D21885 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7CDD53DE2A53676E00D21885 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		7CF87D242A51D33D00AC979B /* StorePrime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorePrime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF87D272A51D33D00AC979B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF87D292A51D33D00AC979B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CF87D2B2A51D33D00AC979B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7CF87D312A51D33D00AC979B /* StorePrime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorePrime.xcdatamodel; sourceTree = "<group>"; };
 		7CF87D332A51D33D00AC979B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CF87D362A51D33D00AC979B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,6 +167,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7CBA01002A53698800FFC21F /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				7CBA01012A53698800FFC21F /* CartViewController.swift */,
+				7CBA01022A53698800FFC21F /* CartPresenter.swift */,
+				7CBA01032A53698800FFC21F /* CartCoordinator.swift */,
+			);
+			name = Cart;
+			path = StorePrime/Modules/Cart;
+			sourceTree = SOURCE_ROOT;
+		};
+		7CDD53D22A5363D000D21885 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD53D32A5363E600D21885 /* MainPageViewController.swift */,
+				7CDD53D52A53640300D21885 /* MainPageCoordinator.swift */,
+				7CDD53D72A53640C00D21885 /* MainPagePresenter.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7CDD53D92A53662B00D21885 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD53DA2A5366BE00D21885 /* SearchCoordinator.swift */,
+				7CDD53DC2A53672B00D21885 /* SearchViewController.swift */,
+				7CDD53DE2A53676E00D21885 /* SearchPresenter.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		7CF87D1B2A51D33D00AC979B = {
 			isa = PBXGroup;
 			children = (
@@ -174,12 +229,12 @@
 				7CF87D5C2A51D45D00AC979B /* Resources */,
 				7CF87D272A51D33D00AC979B /* AppDelegate.swift */,
 				7CF87D292A51D33D00AC979B /* SceneDelegate.swift */,
-				7CF87D2B2A51D33D00AC979B /* ViewController.swift */,
 				7CF87D332A51D33D00AC979B /* Assets.xcassets */,
 				7CF87D352A51D33D00AC979B /* LaunchScreen.storyboard */,
 				7CF87D382A51D33D00AC979B /* Info.plist */,
 				7CF87D302A51D33D00AC979B /* StorePrime.xcdatamodeld */,
 				7CF87D722A51D56700AC979B /* AppCoordinator.swift */,
+				7CDD53CF2A53593E00D21885 /* MainTapBarCoordinator.swift */,
 			);
 			path = StorePrime;
 			sourceTree = "<group>";
@@ -232,6 +287,9 @@
 		7CF87D762A51D5BA00AC979B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7CBA01002A53698800FFC21F /* Cart */,
+				7CDD53D92A53662B00D21885 /* Search */,
+				7CDD53D22A5363D000D21885 /* Main */,
 				7CF87D772A51D5D300AC979B /* Registration */,
 			);
 			path = Modules;
@@ -480,18 +538,27 @@
 			files = (
 				7CF87D732A51D56700AC979B /* AppCoordinator.swift in Sources */,
 				7CF87D7D2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */,
+				7CDD53D62A53640300D21885 /* MainPageCoordinator.swift in Sources */,
 				7CF87D862A51D8FA00AC979B /* String.swift in Sources */,
 				7CF87D812A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */,
-				7CF87D2C2A51D33D00AC979B /* ViewController.swift in Sources */,
 				7CF87D322A51D33D00AC979B /* StorePrime.xcdatamodeld in Sources */,
+				7CBA01072A53698800FFC21F /* CartPresenter.swift in Sources */,
 				7CF87D6F2A51D53000AC979B /* Coordinator.swift in Sources */,
 				7CF87D792A51D5EB00AC979B /* RegistrationViewController.swift in Sources */,
+				7CDD53DB2A5366BE00D21885 /* SearchCoordinator.swift in Sources */,
 				7CF87D8A2A51DA1200AC979B /* Fonts.swift in Sources */,
+				7CDD53DD2A53672B00D21885 /* SearchViewController.swift in Sources */,
+				7CDD53D42A5363E600D21885 /* MainPageViewController.swift in Sources */,
+				7CDD53D02A53593E00D21885 /* MainTapBarCoordinator.swift in Sources */,
 				7CDD53C82A5315FC00D21885 /* UIbutton.swift in Sources */,
+				7CDD53D82A53640C00D21885 /* MainPagePresenter.swift in Sources */,
 				7CF87D9F2A52EA5E00AC979B /* UIColor.swift in Sources */,
 				7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */,
 				7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */,
+				7CBA01042A53698800FFC21F /* CartViewController.swift in Sources */,
 				7CF87D972A52130500AC979B /* UITextField.swift in Sources */,
+				7CDD53DF2A53676E00D21885 /* SearchPresenter.swift in Sources */,
+				7CBA010A2A53698800FFC21F /* CartCoordinator.swift in Sources */,
 				7CDD53CE2A53285100D21885 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +574,9 @@
 				7CF87D702A51D53000AC979B /* Coordinator.swift in Sources */,
 				7CF87D7A2A51D5EB00AC979B /* RegistrationViewController.swift in Sources */,
 				7CF87D872A51D8FA00AC979B /* String.swift in Sources */,
+				7CBA01052A53698800FFC21F /* CartViewController.swift in Sources */,
+				7CBA010B2A53698800FFC21F /* CartCoordinator.swift in Sources */,
+				7CBA01082A53698800FFC21F /* CartPresenter.swift in Sources */,
 				7CF87D422A51D33D00AC979B /* StorePrimeTests.swift in Sources */,
 				7CF87D822A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */,
 				7CF87DA02A52EA5E00AC979B /* UIColor.swift in Sources */,
@@ -521,6 +591,9 @@
 				7CF87D992A52130500AC979B /* UITextField.swift in Sources */,
 				7CF87D752A51D56700AC979B /* AppCoordinator.swift in Sources */,
 				7CF87D7F2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */,
+				7CBA01092A53698800FFC21F /* CartPresenter.swift in Sources */,
+				7CBA01062A53698800FFC21F /* CartViewController.swift in Sources */,
+				7CBA010C2A53698800FFC21F /* CartCoordinator.swift in Sources */,
 				7CF87D4E2A51D33D00AC979B /* StorePrimeUITestsLaunchTests.swift in Sources */,
 				7CF87D4C2A51D33D00AC979B /* StorePrimeUITests.swift in Sources */,
 				7CF87D712A51D53000AC979B /* Coordinator.swift in Sources */,

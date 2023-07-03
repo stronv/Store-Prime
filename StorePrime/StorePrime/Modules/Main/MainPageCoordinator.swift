@@ -1,23 +1,24 @@
 //
-//  RegistrationCoordinator.swift
+//  MainPageCoordinator.swift
 //  StorePrime
 //
-//  Created by Artyom Tabachenko on 02.07.2023.
+//  Created by Artyom Tabachenko on 03.07.2023.
 //
 
 import UIKit
 
-protocol RegistrationCoordinatorProtocol: Coordinator {
+protocol MainPageCoordinatorProtocol: Coordinator {
     func start() -> UIViewController
 }
 
-class RegistrationCoordinator: RegistrationCoordinatorProtocol {
+class MainPageCoordinator: MainPageCoordinatorProtocol {
+    
     var tapBarCoordinator: MainTapBarCoordinator?
     var navigationController = UINavigationController()
     
     init() {
-        let controller = RegistrationViewController()
-        controller.output = RegistrationPresenter(self, view: controller)
+        let controller = MainPageViewController()
+            controller.output = MainPagePresenter(self, view: controller)
         let navigationController = UINavigationController(rootViewController: controller)
         self.navigationController = navigationController
     }

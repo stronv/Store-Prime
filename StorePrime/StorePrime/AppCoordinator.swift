@@ -11,15 +11,12 @@ class AppCoordinator {
     
     var window = UIWindow()
     
-    func goToRegistration() {
+    func start() {
+        let tabBarCoordinator = MainTapBarCoordinator()
+        window.rootViewController = tabBarCoordinator.start()
         window.makeKeyAndVisible()
-        window.backgroundColor = .systemBackground
-        let coordinator = RegistrationCoordinator()
-        coordinator.appCoordinator = self
-        setRootViewController(coordinator.start(), duration: 0.3)
     }
 }
-
 extension AppCoordinator {
     private func setRootViewController(_ vc: UIViewController, duration: TimeInterval) {
         window.rootViewController = vc

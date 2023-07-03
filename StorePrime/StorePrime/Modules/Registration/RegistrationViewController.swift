@@ -23,7 +23,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     }()
     
     private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height + 500)
+        CGSize(width: view.frame.width, height: view.frame.height + 600)
     }
     
     private lazy var contentView: UIView = {
@@ -217,7 +217,6 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     // MARK: - MVP Properties
     var output: RegistrationPresenter!
-    
     // MARK: - Private methods
     private func configure() {
         view.addSubview(scrollView)
@@ -375,10 +374,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         }
         
         let customTitleView = createCustomTitleView(image: "bold-logo")
-        
         navigationItem.titleView = customTitleView
-        
-        
     }
 }
 
