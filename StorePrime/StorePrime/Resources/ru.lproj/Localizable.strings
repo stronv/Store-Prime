@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  StorePrime
+
+  Created by Artyom Tabachenko on 02.07.2023.
+  
+*/
+
+"name_label" = "Имя";
+"surname_label" = "Фамилия";
+"date_of_birth_label" = "Дата рождения";
+"gender_label" = "Пол";
+"address_label" = "Адрес";
+"phone_number_label" = "Телефон";
+"email_label" = "Email";
+"password_label" = "Пароль";
