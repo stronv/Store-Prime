@@ -21,20 +21,24 @@
 "password_label" = "Пароль";
 "already_register_label" = "Уже есть аккаунт?";
 "not_registered_yet_label" = "Еще не зарегистрированы?";
+"title_label" = "Название";
+"inn_label" = "ИНН";
+
 
 "or_label" = "ИЛИ";
 
 "name_textfield" = "Введите имя";
 "surname_textfield" = "Введите фамилию";
 "date_of_birth_textfield" = "дд.мм.гггг";
-"address_textfield" = "Введите адрес";
+"address_textfield" = "Страна, Город, Улица, Дом, Квартира";
 "phone_number_textfield" = "+7(___)-___-__-__";
 "email_textfield" = "Введите email";
 "password_textfield" = "Введите пароль";
+"title_textfield" = "Введите название";
+"inn_textfield" = "Введите ИНН";
 
 "sign_up_button" = "Зарегистрироваться";
 "sign_in_button" = "Войти";
 "sign_up_seller_button" = "Зарегистрироваться как продавец";
+"sign_up_customer_button" = "Зарегистрироваться как покупатель";
 "account_management_button" = "Управление аккаунтом";
-
-

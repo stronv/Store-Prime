@@ -10,6 +10,7 @@ import UIKit
 protocol ProfileTabCoordinatorProtocol: Coordinator {
     func start() -> UIViewController
     func toSignUp()
+    func toSellerSignUp()
     func toSignIn()
     func toProfile()
 }
@@ -31,6 +32,12 @@ class ProfileTabCoordinator: ProfileTabCoordinatorProtocol {
     func toSignUp() {
         let controller = RegistrationViewController()
         controller.output = RegistrationPresenter(self, view: controller)
+        navigationController.setViewControllers([controller], animated: false)
+    }
+    
+    func toSellerSignUp() {
+        let controller = SellerRegistrationViewController()
+        controller.output = SellerRegistrationPresenter(self, view: controller)
         navigationController.setViewControllers([controller], animated: false)
     }
     

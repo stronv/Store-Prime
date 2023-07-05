@@ -87,7 +87,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     
     private let signUpButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_up_button".localized, for: .normal)
+        button.setTitle("sign_up_customer_button".localized, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
@@ -106,6 +106,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
         let button = UIButton()
         button.setTitle("sign_up_seller_button".localized, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
+        button.addTarget(self, action: #selector(signUpSellerButtonAction), for: .touchUpInside)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.underline()
         return button
@@ -208,5 +209,10 @@ extension LoginViewController {
     // MARK: - Objc Methods
     @objc func signUpButtonAction() {
         output.showSignUp()
+    }
+    
+    // MARK: - Objc Methods
+    @objc func signUpSellerButtonAction() {
+        output.showSellerSignUp()
     }
 }

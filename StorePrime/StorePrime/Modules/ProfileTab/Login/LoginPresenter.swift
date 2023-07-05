@@ -9,6 +9,7 @@ import Foundation
 
 protocol LoginPresenterProtocol {
     func showSignUp()
+    func showSellerSignUp()
 }
 
 class LoginPresenter: LoginPresenterProtocol {
@@ -22,5 +23,10 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func showSignUp() {
         moduleOutput.toSignUp()
+    }
+    
+    
+    func showSellerSignUp() {
+        moduleOutput.toSellerSignUp()
     }
 }

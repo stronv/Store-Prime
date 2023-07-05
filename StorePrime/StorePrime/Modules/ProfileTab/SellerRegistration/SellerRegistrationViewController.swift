@@ -1,18 +1,20 @@
 //
-//  RegistrationViewController.swift
+//  SellerRegistrationViewController.swift
 //  StorePrime
 //
-//  Created by Artyom Tabachenko on 02.07.2023.
+//  Created by Artyom Tabachenko on 05.07.2023.
 //
+
+import Foundation
 
 import UIKit
 import SnapKit
 
-protocol RegistrationViewControllerProtocol: AnyObject {
+protocol SellerRegistrationViewControllerProtocol: AnyObject {
     
 }
 
-class RegistrationViewController: UIViewController, RegistrationViewControllerProtocol {
+class SellerRegistrationViewController: UIViewController, SellerRegistrationViewControllerProtocol {
     
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
@@ -42,60 +44,34 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         return label
     }()
     
-    private let nameLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "name_label".localized
+        label.text = "title_label".localized
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
-    private let nameTextField: UITextField = {
+    private let titleTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "name_textfield".localized
+        textField.placeholder = "title_textfield".localized
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         textField.isUserInteractionEnabled = true
         return textField
     }()
     
-    private let surnameLabel: UILabel = {
+    private let innLabel: UILabel = {
         let label = UILabel()
-        label.text = "surname_label".localized
+        label.text = "inn_label".localized
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
-    private let surnameTextField: UITextField = {
+    private let innTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "surname_textfield".localized
+        textField.placeholder = "inn_textfield".localized
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.isUserInteractionEnabled = true
         return textField
-    }()
-    
-    private let dateOfBirthLabel: UILabel = {
-        let label = UILabel()
-        label.text = "date_of_birth_label".localized
-        label.font = UIFont(name: Fonts.exo2Bold, size: 20)
-        return label
-    }()
-    
-    private let dateOfBirthTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "date_of_birth_textfield".localized
-        textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
-        return textField
-    }()
-    
-    private let genderLabel: UILabel = {
-        let label = UILabel()
-        label.text = "gender_label".localized
-        label.font = UIFont(name: Fonts.exo2Bold, size: 20)
-        return label
-    }()
-    
-    private let genderSegmentedControl: UISegmentedControl = {
-        let items = ["male_string".localized, "female_string".localized]
-        let segmentedControl = UISegmentedControl(items: items)
-        return segmentedControl
     }()
     
     private let addressLabel: UILabel = {
@@ -108,20 +84,6 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     private let addressTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "address_textfield".localized
-        textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
-        return textField
-    }()
-    
-    private let phoneNumberLabel: UILabel = {
-        let label = UILabel()
-        label.text = "phone_number_label".localized
-        label.font = UIFont(name: Fonts.exo2Bold, size: 20)
-        return label
-    }()
-    
-    private let phoneNumberTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "phone_number_textfield".localized
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
@@ -190,7 +152,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     private let signUpSellerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_up_seller_button".localized, for: .normal)
+        button.setTitle("sign_up_customer_button".localized, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signUpSellerButtonAction), for: .touchUpInside)
@@ -207,17 +169,15 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        nameTextField.setUnderLine()
-        surnameTextField.setUnderLine()
-        dateOfBirthTextField.setUnderLine()
+        titleTextField.setUnderLine()
+        innTextField.setUnderLine()
         addressTextField.setUnderLine()
-        phoneNumberTextField.setUnderLine()
         emailTextField.setUnderLine()
         passwordTextField.setUnderLine()
     }
     
     // MARK: - MVP Properties
-    var output: RegistrationPresenterProtocol!
+    var output: SellerRegistrationPresenterProtocol!
     
     // MARK: - Private methods
     private func configure() {
@@ -230,57 +190,29 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
             make.centerX.equalToSuperview()
         }
         
-        contentView.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { make in
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
             make.top.equalTo(signUpLabel.snp.bottom).offset(75)
             make.leading.equalToSuperview().inset(38)
         }
         
-        contentView.addSubview(nameTextField)
-        nameTextField.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(17)
+        contentView.addSubview(titleTextField)
+        titleTextField.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(17)
             make.leading.equalToSuperview().offset(38)
             make.trailing.equalToSuperview().inset(38)
             make.height.equalTo(32)
         }
         
-        contentView.addSubview(surnameLabel)
-        surnameLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
+        contentView.addSubview(innLabel)
+        innLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleTextField.snp.bottom).offset(37)
+            make.leading.equalToSuperview().inset(38)
         }
         
-        contentView.addSubview(surnameTextField)
-        surnameTextField.snp.makeConstraints { make in
-            make.top.equalTo(surnameLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(dateOfBirthLabel)
-        dateOfBirthLabel.snp.makeConstraints { make in
-            make.top.equalTo(surnameTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(dateOfBirthTextField)
-        dateOfBirthTextField.snp.makeConstraints { make in
-            make.top.equalTo(dateOfBirthLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(genderLabel)
-        genderLabel.snp.makeConstraints { make in
-            make.top.equalTo(dateOfBirthTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(genderSegmentedControl)
-        genderSegmentedControl.snp.makeConstraints { make in
-            make.top.equalTo(genderLabel.snp.bottom).offset(17)
+        contentView.addSubview(innTextField)
+        innTextField.snp.makeConstraints { make in
+            make.top.equalTo(innLabel.snp.bottom).offset(17)
             make.leading.equalToSuperview().offset(38)
             make.trailing.equalToSuperview().inset(38)
             make.height.equalTo(32)
@@ -288,7 +220,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         
         contentView.addSubview(addressLabel)
         addressLabel.snp.makeConstraints { make in
-            make.top.equalTo(genderSegmentedControl.snp.bottom).offset(37)
+            make.top.equalTo(innTextField.snp.bottom).offset(37)
             make.leading.equalToSuperview().offset(38)
         }
         
@@ -300,23 +232,9 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
             make.height.equalTo(32)
         }
         
-        contentView.addSubview(phoneNumberLabel)
-        phoneNumberLabel.snp.makeConstraints { make in
-            make.top.equalTo(addressTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(phoneNumberTextField)
-        phoneNumberTextField.snp.makeConstraints { make in
-            make.top.equalTo(phoneNumberLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
         contentView.addSubview(emailLabel)
         emailLabel.snp.makeConstraints { make in
-            make.top.equalTo(phoneNumberTextField.snp.bottom).offset(37)
+            make.top.equalTo(addressTextField.snp.bottom).offset(37)
             make.leading.equalToSuperview().offset(38)
         }
         
@@ -379,13 +297,13 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     }
 }
 
-extension RegistrationViewController {
+extension SellerRegistrationViewController {
     // MARK: - Objc Methods
     @objc func signInButtonAction() {
         output.showSignIn()
     }
     
     @objc func signUpSellerButtonAction() {
-        output.showSellerSignUp()
+        output.showCustomerSignUp()
     }
 }

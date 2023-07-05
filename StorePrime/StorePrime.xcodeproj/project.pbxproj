@@ -16,6 +16,8 @@
 		7C7966D82A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */; };
 		7C7D34F62A54027000A08B02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D34F52A54027000A08B02 /* LoginViewController.swift */; };
 		7C7D34F82A54027900A08B02 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D34F72A54027900A08B02 /* LoginPresenter.swift */; };
+		7C99F0A92A558D6900BBEA9B /* SellerRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C99F0A82A558D6900BBEA9B /* SellerRegistrationViewController.swift */; };
+		7C99F0AB2A558DA300BBEA9B /* SellerRegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C99F0AA2A558DA300BBEA9B /* SellerRegistrationPresenter.swift */; };
 		7CBA01042A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
 		7CBA01052A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
 		7CBA01062A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
@@ -103,6 +105,8 @@
 		7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
 		7C7D34F52A54027000A08B02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7C7D34F72A54027900A08B02 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		7C99F0A82A558D6900BBEA9B /* SellerRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerRegistrationViewController.swift; sourceTree = "<group>"; };
+		7C99F0AA2A558DA300BBEA9B /* SellerRegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerRegistrationPresenter.swift; sourceTree = "<group>"; };
 		7CBA01012A53698800FFC21F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		7CBA01022A53698800FFC21F /* CartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		7CBA01032A53698800FFC21F /* CartCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */,
+				7C99F0A72A558D5700BBEA9B /* SellerRegistration */,
 				7C754B802A5458C2009FE0C5 /* Profile */,
 				7CF87D772A51D5D300AC979B /* Registration */,
 				7C7D34F42A54026400A08B02 /* Login */,
@@ -208,6 +213,15 @@
 				7C7D34F72A54027900A08B02 /* LoginPresenter.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		7C99F0A72A558D5700BBEA9B /* SellerRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				7C99F0A82A558D6900BBEA9B /* SellerRegistrationViewController.swift */,
+				7C99F0AA2A558DA300BBEA9B /* SellerRegistrationPresenter.swift */,
+			);
+			path = SellerRegistration;
 			sourceTree = "<group>";
 		};
 		7CBA01002A53698800FFC21F /* Cart */ = {
@@ -599,6 +613,7 @@
 			files = (
 				7CF87D732A51D56700AC979B /* AppCoordinator.swift in Sources */,
 				7CF87D7D2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */,
+				7C99F0A92A558D6900BBEA9B /* SellerRegistrationViewController.swift in Sources */,
 				7CDD53D62A53640300D21885 /* MainPageCoordinator.swift in Sources */,
 				7CF87D862A51D8FA00AC979B /* String.swift in Sources */,
 				7CC7F3F62A5483DE00A7BD31 /* User.swift in Sources */,
@@ -610,6 +625,7 @@
 				7CDD53DB2A5366BE00D21885 /* SearchCoordinator.swift in Sources */,
 				7CF87D8A2A51DA1200AC979B /* Fonts.swift in Sources */,
 				7CDD53DD2A53672B00D21885 /* SearchViewController.swift in Sources */,
+				7C99F0AB2A558DA300BBEA9B /* SellerRegistrationPresenter.swift in Sources */,
 				7CDD53D42A5363E600D21885 /* MainPageViewController.swift in Sources */,
 				7C7D34F62A54027000A08B02 /* LoginViewController.swift in Sources */,
 				7CDD53D02A53593E00D21885 /* MainTapBarCoordinator.swift in Sources */,
