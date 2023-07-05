@@ -19,11 +19,12 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         scrollView.backgroundColor = .white
         scrollView.contentSize = contentSize
         scrollView.frame = view.bounds
+        
         return scrollView
     }()
     
     private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height + 600)
+        CGSize(width: view.bounds.width, height: view.bounds.height + 400)
     }
     
     private lazy var contentView: UIView = {
@@ -158,7 +159,6 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         button.setTitle("sign_up_button".localized, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(firstCheck), for: .touchUpInside)
         button.backgroundColor = UIColor.customBlack
         return button
     }()
@@ -175,7 +175,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         button.setTitle("sign_in_button".localized, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
-        button.addTarget(self, action: #selector(firstCheck), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
         button.underline()
         return button
     }()
@@ -192,7 +192,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         button.setTitle("sign_up_seller_button".localized, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
-        button.addTarget(self, action: #selector(firstCheck), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpSellerButtonAction), for: .touchUpInside)
         button.underline()
         return button
     }()
@@ -216,7 +216,8 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     }
     
     // MARK: - MVP Properties
-    var output: RegistrationPresenter!
+    var output: RegistrationPresenterProtocol!
+    
     // MARK: - Private methods
     private func configure() {
         view.addSubview(scrollView)
@@ -343,10 +344,9 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         contentView.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             make.height.equalTo(93)
-            
             make.top.equalTo(passwordTextField.snp.bottom).offset(55)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().inset(20)
+            make.leading.equalToSuperview().offset(38)
+            make.trailing.equalToSuperview().inset(38)
         }
         
         contentView.addSubview(alreadyRegisterLabel)
@@ -380,7 +380,11 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
 
 extension RegistrationViewController {
     // MARK: - Objc Methods
-    @objc func firstCheck() {
-        print("Button is work!")
+    @objc func signInButtonAction() {
+        output.showSignIn()
+    }
+    
+    @objc func signUpSellerButtonAction() {
+//        output.showSignUpSeller()
     }
 }

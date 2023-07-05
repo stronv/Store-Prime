@@ -10,6 +10,7 @@
 "female_string" = "Женщина";
 
 "sign_up_label" = "Регистрация";
+"sign_in_label" = "Авторизация";
 "name_label" = "Имя";
 "surname_label" = "Фамилия";
 "date_of_birth_label" = "Дата рождения";
@@ -19,6 +20,8 @@
 "email_label" = "Email";
 "password_label" = "Пароль";
 "already_register_label" = "Уже есть аккаунт?";
+"not_registered_yet_label" = "Еще не зарегистрированы?";
+
 "or_label" = "ИЛИ";
 
 "name_textfield" = "Введите имя";
@@ -31,7 +34,7 @@
 
 "sign_up_button" = "Зарегистрироваться";
 "sign_in_button" = "Войти";
-
 "sign_up_seller_button" = "Зарегистрироваться как продавец";
+"account_management_button" = "Управление аккаунтом";
 
 

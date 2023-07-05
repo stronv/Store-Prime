@@ -8,7 +8,10 @@
 import UIKit
     
 class MainTapBarCoordinator: Coordinator {
+    
     weak var tapBarController: UITabBarController?
+    var appCoordinator: AppCoordinator?
+    var navigationController = UINavigationController()
     
     func start() -> UIViewController {
         let tabBarController = UITabBarController()
@@ -20,18 +23,6 @@ class MainTapBarCoordinator: Coordinator {
             showUserPage()
         ]
         return tabBarController
-    }
-    
-    private func showUserPage() -> UIViewController {
-        let coordinator = RegistrationCoordinator()
-        coordinator.tapBarCoordinator = self
-        let controller = coordinator.start()
-        controller.tabBarItem = .init(
-            title: "",
-            image: .init(systemName: "person.circle"),
-            selectedImage: .init(systemName: "person.circle.fill")
-        )
-        return controller
     }
     
     private func showMainPage() -> UIViewController {
@@ -66,6 +57,18 @@ class MainTapBarCoordinator: Coordinator {
             title: "",
             image: .init(systemName: "cart"),
             selectedImage: .init(systemName: "cart.fill")
+        )
+        return controller
+    }
+    
+    private func showUserPage() -> UIViewController {
+        let coordinator = ProfileTabCoordinator(navigationController: navigationController)
+        coordinator.tapBarCoordinator = self
+        let controller = coordinator.start()
+        controller.tabBarItem = .init(
+            title: "",
+            image: .init(systemName: "person.circle"),
+            selectedImage: .init(systemName: "person.circle.fill")
         )
         return controller
     }

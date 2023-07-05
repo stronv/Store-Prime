@@ -17,6 +17,7 @@ class AppCoordinator {
         window.makeKeyAndVisible()
     }
 }
+
 extension AppCoordinator {
     private func setRootViewController(_ vc: UIViewController, duration: TimeInterval) {
         window.rootViewController = vc

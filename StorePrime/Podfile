@@ -5,4 +5,5 @@ platform :ios, '13.0'
 target 'StorePrime' do
   pod 'SnapKit'
   pod 'SwiftLint'
+  pod 'Moya'
 end

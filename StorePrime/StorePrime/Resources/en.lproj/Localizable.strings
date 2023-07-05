@@ -10,6 +10,7 @@
 "female_string" = "Female";
 
 "sign_up_label" = "Registration";
+"sign_in_label" = "Authorization";
 "name_label" = "Name";
 "surname_label" = "Surname";
 "date_of_birth_label" = "Date of birth";
@@ -19,6 +20,7 @@
 "email_label" = "Email";
 "password_label" = "Password";
 "already_register_label" = "Already have an account?";
+"not_registered_yet_label" = "Not registered yet?";
 "or_label" = "OR";
 
 "name_textfield" = "Enter a name";
@@ -31,6 +33,7 @@
 
 "sign_up_button" = "Sign Up";
 "sign_in_button" = "Sign In";
-
 "sign_up_seller_button" = "Register as a seller";
+"account_management_button" = "Account management";
+
 

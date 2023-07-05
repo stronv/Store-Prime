@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		41159E0B550347552852DC83 /* Pods_StorePrime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6B988E6D8DA4A6EF91100 /* Pods_StorePrime.framework */; };
+		7C754B822A545930009FE0C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C754B812A545930009FE0C5 /* ProfileViewController.swift */; };
+		7C754B842A54596E009FE0C5 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C754B832A54596E009FE0C5 /* ProfilePresenter.swift */; };
+		7C7966CD2A5484D700CEA8E4 /* UserTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966CC2A5484D700CEA8E4 /* UserTarget.swift */; };
+		7C7966D62A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */; };
+		7C7966D72A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */; };
+		7C7966D82A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */; };
+		7C7D34F62A54027000A08B02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D34F52A54027000A08B02 /* LoginViewController.swift */; };
+		7C7D34F82A54027900A08B02 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D34F72A54027900A08B02 /* LoginPresenter.swift */; };
 		7CBA01042A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
 		7CBA01052A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
 		7CBA01062A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
@@ -17,6 +25,8 @@
 		7CBA010A2A53698800FFC21F /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01032A53698800FFC21F /* CartCoordinator.swift */; };
 		7CBA010B2A53698800FFC21F /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01032A53698800FFC21F /* CartCoordinator.swift */; };
 		7CBA010C2A53698800FFC21F /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01032A53698800FFC21F /* CartCoordinator.swift */; };
+		7CC7F3F62A5483DE00A7BD31 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F3F52A5483DE00A7BD31 /* User.swift */; };
+		7CC7F3F92A5483F900A7BD31 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC7F3F82A5483F900A7BD31 /* UserService.swift */; };
 		7CDD53C82A5315FC00D21885 /* UIbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53C72A5315FC00D21885 /* UIbutton.swift */; };
 		7CDD53CE2A53285100D21885 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53CD2A53285100D21885 /* UIViewController.swift */; };
 		7CDD53D02A53593E00D21885 /* MainTapBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53CF2A53593E00D21885 /* MainTapBarCoordinator.swift */; };
@@ -52,9 +62,6 @@
 		7CF87D7D2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D7C2A51D60A00AC979B /* RegistrationPresenter.swift */; };
 		7CF87D7E2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D7C2A51D60A00AC979B /* RegistrationPresenter.swift */; };
 		7CF87D7F2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D7C2A51D60A00AC979B /* RegistrationPresenter.swift */; };
-		7CF87D812A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D802A51D62C00AC979B /* RegistrationCoordinator.swift */; };
-		7CF87D822A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D802A51D62C00AC979B /* RegistrationCoordinator.swift */; };
-		7CF87D832A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D802A51D62C00AC979B /* RegistrationCoordinator.swift */; };
 		7CF87D862A51D8FA00AC979B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D852A51D8FA00AC979B /* String.swift */; };
 		7CF87D872A51D8FA00AC979B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D852A51D8FA00AC979B /* String.swift */; };
 		7CF87D882A51D8FA00AC979B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D852A51D8FA00AC979B /* String.swift */; };
@@ -90,9 +97,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C754B812A545930009FE0C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7C754B832A54596E009FE0C5 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		7C7966CC2A5484D700CEA8E4 /* UserTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTarget.swift; sourceTree = "<group>"; };
+		7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
+		7C7D34F52A54027000A08B02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7C7D34F72A54027900A08B02 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		7CBA01012A53698800FFC21F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		7CBA01022A53698800FFC21F /* CartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		7CBA01032A53698800FFC21F /* CartCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
+		7CC7F3F52A5483DE00A7BD31 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7CC7F3F82A5483F900A7BD31 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7CDD53C72A5315FC00D21885 /* UIbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIbutton.swift; sourceTree = "<group>"; };
 		7CDD53CD2A53285100D21885 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		7CDD53CF2A53593E00D21885 /* MainTapBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTapBarCoordinator.swift; sourceTree = "<group>"; };
@@ -122,7 +137,6 @@
 		7CF87D722A51D56700AC979B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7CF87D782A51D5EB00AC979B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		7CF87D7C2A51D60A00AC979B /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
-		7CF87D802A51D62C00AC979B /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		7CF87D852A51D8FA00AC979B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7CF87D892A51DA1200AC979B /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		7CF87D962A52130500AC979B /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -167,6 +181,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C754B802A5458C2009FE0C5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7C754B812A545930009FE0C5 /* ProfileViewController.swift */,
+				7C754B832A54596E009FE0C5 /* ProfilePresenter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7C7966CE2A5492B800CEA8E4 /* ProfileTab */ = {
+			isa = PBXGroup;
+			children = (
+				7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */,
+				7C754B802A5458C2009FE0C5 /* Profile */,
+				7CF87D772A51D5D300AC979B /* Registration */,
+				7C7D34F42A54026400A08B02 /* Login */,
+			);
+			path = ProfileTab;
+			sourceTree = "<group>";
+		};
+		7C7D34F42A54026400A08B02 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7C7D34F52A54027000A08B02 /* LoginViewController.swift */,
+				7C7D34F72A54027900A08B02 /* LoginPresenter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		7CBA01002A53698800FFC21F /* Cart */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +220,23 @@
 			name = Cart;
 			path = StorePrime/Modules/Cart;
 			sourceTree = SOURCE_ROOT;
+		};
+		7CC7F3F42A5483D400A7BD31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7CC7F3F52A5483DE00A7BD31 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7CC7F3F72A5483EC00A7BD31 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7CC7F3F82A5483F900A7BD31 /* UserService.swift */,
+				7C7966CC2A5484D700CEA8E4 /* UserTarget.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
 		};
 		7CDD53D22A5363D000D21885 /* Main */ = {
 			isa = PBXGroup;
@@ -223,6 +283,8 @@
 		7CF87D262A51D33D00AC979B /* StorePrime */ = {
 			isa = PBXGroup;
 			children = (
+				7CC7F3F72A5483EC00A7BD31 /* Services */,
+				7CC7F3F42A5483D400A7BD31 /* Models */,
 				7CF87D8D2A51DD8D00AC979B /* CustomViews */,
 				7CF87D762A51D5BA00AC979B /* Modules */,
 				7CF87D6D2A51D52300AC979B /* Helpers */,
@@ -287,10 +349,10 @@
 		7CF87D762A51D5BA00AC979B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7C7966CE2A5492B800CEA8E4 /* ProfileTab */,
 				7CBA01002A53698800FFC21F /* Cart */,
 				7CDD53D92A53662B00D21885 /* Search */,
 				7CDD53D22A5363D000D21885 /* Main */,
-				7CF87D772A51D5D300AC979B /* Registration */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -300,7 +362,6 @@
 			children = (
 				7CF87D782A51D5EB00AC979B /* RegistrationViewController.swift */,
 				7CF87D7C2A51D60A00AC979B /* RegistrationPresenter.swift */,
-				7CF87D802A51D62C00AC979B /* RegistrationCoordinator.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -540,24 +601,31 @@
 				7CF87D7D2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */,
 				7CDD53D62A53640300D21885 /* MainPageCoordinator.swift in Sources */,
 				7CF87D862A51D8FA00AC979B /* String.swift in Sources */,
-				7CF87D812A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */,
+				7CC7F3F62A5483DE00A7BD31 /* User.swift in Sources */,
 				7CF87D322A51D33D00AC979B /* StorePrime.xcdatamodeld in Sources */,
 				7CBA01072A53698800FFC21F /* CartPresenter.swift in Sources */,
 				7CF87D6F2A51D53000AC979B /* Coordinator.swift in Sources */,
+				7C7D34F82A54027900A08B02 /* LoginPresenter.swift in Sources */,
 				7CF87D792A51D5EB00AC979B /* RegistrationViewController.swift in Sources */,
 				7CDD53DB2A5366BE00D21885 /* SearchCoordinator.swift in Sources */,
 				7CF87D8A2A51DA1200AC979B /* Fonts.swift in Sources */,
 				7CDD53DD2A53672B00D21885 /* SearchViewController.swift in Sources */,
 				7CDD53D42A5363E600D21885 /* MainPageViewController.swift in Sources */,
+				7C7D34F62A54027000A08B02 /* LoginViewController.swift in Sources */,
 				7CDD53D02A53593E00D21885 /* MainTapBarCoordinator.swift in Sources */,
 				7CDD53C82A5315FC00D21885 /* UIbutton.swift in Sources */,
+				7C754B822A545930009FE0C5 /* ProfileViewController.swift in Sources */,
 				7CDD53D82A53640C00D21885 /* MainPagePresenter.swift in Sources */,
 				7CF87D9F2A52EA5E00AC979B /* UIColor.swift in Sources */,
+				7C754B842A54596E009FE0C5 /* ProfilePresenter.swift in Sources */,
 				7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */,
 				7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */,
 				7CBA01042A53698800FFC21F /* CartViewController.swift in Sources */,
+				7C7966D62A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */,
 				7CF87D972A52130500AC979B /* UITextField.swift in Sources */,
+				7C7966CD2A5484D700CEA8E4 /* UserTarget.swift in Sources */,
 				7CDD53DF2A53676E00D21885 /* SearchPresenter.swift in Sources */,
+				7CC7F3F92A5483F900A7BD31 /* UserService.swift in Sources */,
 				7CBA010A2A53698800FFC21F /* CartCoordinator.swift in Sources */,
 				7CDD53CE2A53285100D21885 /* UIViewController.swift in Sources */,
 			);
@@ -574,11 +642,11 @@
 				7CF87D702A51D53000AC979B /* Coordinator.swift in Sources */,
 				7CF87D7A2A51D5EB00AC979B /* RegistrationViewController.swift in Sources */,
 				7CF87D872A51D8FA00AC979B /* String.swift in Sources */,
+				7C7966D72A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */,
 				7CBA01052A53698800FFC21F /* CartViewController.swift in Sources */,
 				7CBA010B2A53698800FFC21F /* CartCoordinator.swift in Sources */,
 				7CBA01082A53698800FFC21F /* CartPresenter.swift in Sources */,
 				7CF87D422A51D33D00AC979B /* StorePrimeTests.swift in Sources */,
-				7CF87D822A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */,
 				7CF87DA02A52EA5E00AC979B /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,8 +655,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CF87D832A51D62C00AC979B /* RegistrationCoordinator.swift in Sources */,
 				7CF87D992A52130500AC979B /* UITextField.swift in Sources */,
+				7C7966D82A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */,
 				7CF87D752A51D56700AC979B /* AppCoordinator.swift in Sources */,
 				7CF87D7F2A51D60A00AC979B /* RegistrationPresenter.swift in Sources */,
 				7CBA01092A53698800FFC21F /* CartPresenter.swift in Sources */,
