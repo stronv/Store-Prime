@@ -16,21 +16,15 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
-        scrollView.contentSize = contentSize
-        scrollView.frame = view.bounds
         return scrollView
     }()
     
-    private var contentSize: CGSize {
-        CGSize(width: view.frame.width, height: view.frame.height)
-    }
-    
-    private lazy var contentView: UIView = {
-        let contentView = UIView()
-        contentView.backgroundColor = .white
-        contentView.frame.size = contentSize
-        return contentView
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 50
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        return stackView
     }()
     
     private let signInLabel: UILabel = {
@@ -95,6 +89,13 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
         return button
     }()
     
+    private lazy var notRegisteredYetStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        return stackView
+    }()
+    
     private let orLabel: UILabel = {
         let label = UILabel()
         label.text = "or_label".localized
@@ -110,6 +111,14 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.underline()
         return button
+    }()
+    
+    private let bottomStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 30
+        stackView.alignment = .center
+        return stackView
     }()
     
     // MARK: - Lifecycle
@@ -129,74 +138,62 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     var output: LoginPresenterProtocol!
     
     // MARK: - Private methods
+    private func addInputToStackView(stackView: UIStackView, label: UILabel, textField: UITextField) {
+        let inputStackView = UIStackView()
+        inputStackView.spacing = 7
+        inputStackView.axis = .vertical
+        inputStackView.alignment = .leading
+        
+        inputStackView.addArrangedSubview(label)
+        inputStackView.addArrangedSubview(textField)
+        stackView.addArrangedSubview(inputStackView)
+        
+        inputStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(38)
+            make.trailing.equalToSuperview().inset(38)
+        }
+        
+        textField.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(44)
+        }
+    }
+    
     private func configure() {
         view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        
-        contentView.addSubview(signInLabel)
-        signInLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(75)
-            make.centerX.equalToSuperview()
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
-        contentView.addSubview(emailLabel)
-        emailLabel.snp.makeConstraints { make in
-            make.top.equalTo(signInLabel.snp.bottom).offset(40)
-            make.leading.equalToSuperview().offset(38)
+        scrollView.addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalToSuperview()
         }
         
-        contentView.addSubview(emailTextField)
-        emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(emailLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
+        stackView.addArrangedSubview(signInLabel)
         
-        contentView.addSubview(passwordLabel)
-        passwordLabel.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
+        addInputToStackView(stackView: stackView, label: emailLabel, textField: emailTextField)
+        addInputToStackView(stackView: stackView, label: passwordLabel, textField: passwordTextField)
         
-        contentView.addSubview(passwordTextField)
-        passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(passwordLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(signInButton)
+        stackView.addArrangedSubview(signInButton)
         signInButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(18)
+            make.trailing.equalToSuperview().inset(18)
             make.height.equalTo(93)
-            make.top.equalTo(passwordTextField.snp.bottom).offset(89)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
         }
         
-        contentView.addSubview(notRegisteredYetLabel)
-        notRegisteredYetLabel.snp.makeConstraints { make in
-            make.top.equalTo(signInButton.snp.bottom).offset(73)
-            make.leading.equalToSuperview().offset(38)
-        }
+        notRegisteredYetStackView.addArrangedSubview(notRegisteredYetLabel)
+        notRegisteredYetStackView.addArrangedSubview(signUpButton)
+        bottomStackView.addArrangedSubview(notRegisteredYetStackView)
+        bottomStackView.addArrangedSubview(orLabel)
+        bottomStackView.addArrangedSubview(signUpSellerButton)
+        stackView.addArrangedSubview(bottomStackView)
         
-        contentView.addSubview(signUpButton)
-        signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(notRegisteredYetLabel.snp.bottom).offset(16)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(orLabel)
-        orLabel.snp.makeConstraints { make in
-            make.top.equalTo(signUpButton.snp.bottom).offset(27)
-            make.centerX.equalToSuperview()
-        }
-        
-        contentView.addSubview(signUpSellerButton)
-        signUpSellerButton.snp.makeConstraints { make in
-            make.top.equalTo(orLabel.snp.bottom).offset(27)
-            make.leading.equalToSuperview().offset(38)
+        notRegisteredYetStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         let customTitleView = createCustomTitleView(image: "bold-logo")

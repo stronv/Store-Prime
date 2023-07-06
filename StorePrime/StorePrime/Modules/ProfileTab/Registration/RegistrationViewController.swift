@@ -18,21 +18,15 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .white
-        scrollView.contentSize = contentSize
-        scrollView.frame = view.bounds
-        
         return scrollView
     }()
     
-    private var contentSize: CGSize {
-        CGSize(width: view.bounds.width, height: view.bounds.height + 600)
-    }
-    
-    private lazy var contentView: UIView = {
-        let contentView = UIView()
-        contentView.backgroundColor = .white
-        contentView.frame.size = contentSize
-        return contentView
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 33
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        return stackView
     }()
     
     private let signUpLabel: UILabel = {
@@ -98,6 +92,14 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         return segmentedControl
     }()
     
+    private lazy var genderInputStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 7
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        return stackView
+    }()
+    
     private let addressLabel: UILabel = {
         let label = UILabel()
         label.text = "address_label".localized
@@ -160,6 +162,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         button.setTitle("sign_up_button".localized, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
         button.backgroundColor = UIColor.customBlack
         return button
     }()
@@ -168,6 +171,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = "already_register_label".localized
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.setContentHuggingPriority(UILayoutPriority(252), for: .horizontal)
         return label
     }()
     
@@ -177,8 +181,16 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
+        button.setContentHuggingPriority(UILayoutPriority(251), for: .horizontal)
         button.underline()
         return button
+    }()
+    
+    private lazy var alreadyRegisterStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        return stackView
     }()
     
     private let orLabel: UILabel = {
@@ -196,6 +208,14 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         button.addTarget(self, action: #selector(signUpSellerButtonAction), for: .touchUpInside)
         button.underline()
         return button
+    }()
+    
+    private let bottomStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 30
+        stackView.alignment = .center
+        return stackView
     }()
     
     // MARK: - Lifecycle
@@ -220,158 +240,80 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     var output: RegistrationPresenterProtocol!
     
     // MARK: - Private methods
+    private func addInputToStackView(stackView: UIStackView, label: UILabel, textField: UITextField) {
+        let inputStackView = UIStackView()
+        inputStackView.spacing = 7
+        inputStackView.axis = .vertical
+        inputStackView.alignment = .leading
+        
+        inputStackView.addArrangedSubview(label)
+        inputStackView.addArrangedSubview(textField)
+        stackView.addArrangedSubview(inputStackView)
+        
+        inputStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(38)
+            make.trailing.equalToSuperview().inset(38)
+        }
+        
+        textField.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(44)
+        }
+    }
+    
     private func configure() {
         view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        
-        contentView.addSubview(signUpLabel)
-        signUpLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(20)
-            make.centerX.equalToSuperview()
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
-        contentView.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(signUpLabel.snp.bottom).offset(75)
-            make.leading.equalToSuperview().inset(38)
+        scrollView.addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalToSuperview()
         }
         
-        contentView.addSubview(nameTextField)
-        nameTextField.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(17)
+        stackView.addArrangedSubview(signUpLabel)
+    
+        addInputToStackView(stackView: stackView, label: nameLabel, textField: nameTextField)
+        addInputToStackView(stackView: stackView, label: surnameLabel, textField: surnameTextField)
+        addInputToStackView(stackView: stackView, label: dateOfBirthLabel, textField: dateOfBirthTextField)
+        
+        genderInputStackView.addArrangedSubview(genderLabel)
+        genderInputStackView.addArrangedSubview(genderSegmentedControl)
+        stackView.addArrangedSubview(genderInputStackView)
+        genderInputStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(38)
             make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
         }
-        
-        contentView.addSubview(surnameLabel)
-        surnameLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(surnameTextField)
-        surnameTextField.snp.makeConstraints { make in
-            make.top.equalTo(surnameLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(dateOfBirthLabel)
-        dateOfBirthLabel.snp.makeConstraints { make in
-            make.top.equalTo(surnameTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(dateOfBirthTextField)
-        dateOfBirthTextField.snp.makeConstraints { make in
-            make.top.equalTo(dateOfBirthLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(genderLabel)
-        genderLabel.snp.makeConstraints { make in
-            make.top.equalTo(dateOfBirthTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(genderSegmentedControl)
         genderSegmentedControl.snp.makeConstraints { make in
-            make.top.equalTo(genderLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
-        contentView.addSubview(addressLabel)
-        addressLabel.snp.makeConstraints { make in
-            make.top.equalTo(genderSegmentedControl.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
+        addInputToStackView(stackView: stackView, label: addressLabel, textField: addressTextField)
+        addInputToStackView(stackView: stackView, label: phoneNumberLabel, textField: phoneNumberTextField)
+        addInputToStackView(stackView: stackView, label: emailLabel, textField: emailTextField)
+        addInputToStackView(stackView: stackView, label: passwordLabel, textField: passwordTextField)
         
-        contentView.addSubview(addressTextField)
-        addressTextField.snp.makeConstraints { make in
-            make.top.equalTo(addressLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(phoneNumberLabel)
-        phoneNumberLabel.snp.makeConstraints { make in
-            make.top.equalTo(addressTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(phoneNumberTextField)
-        phoneNumberTextField.snp.makeConstraints { make in
-            make.top.equalTo(phoneNumberLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(emailLabel)
-        emailLabel.snp.makeConstraints { make in
-            make.top.equalTo(phoneNumberTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(emailTextField)
-        emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(emailLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(passwordLabel)
-        passwordLabel.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).offset(37)
-            make.leading.equalToSuperview().offset(38)
-        }
-        
-        contentView.addSubview(passwordTextField)
-        passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(passwordLabel.snp.bottom).offset(17)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
-            make.height.equalTo(32)
-        }
-        
-        contentView.addSubview(signUpButton)
+        stackView.addArrangedSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(18)
+            make.trailing.equalToSuperview().inset(18)
             make.height.equalTo(93)
-            make.top.equalTo(passwordTextField.snp.bottom).offset(55)
-            make.leading.equalToSuperview().offset(38)
-            make.trailing.equalToSuperview().inset(38)
         }
         
-        contentView.addSubview(alreadyRegisterLabel)
-        alreadyRegisterLabel.snp.makeConstraints { make in
-            make.top.equalTo(signUpButton.snp.bottom).offset(88)
-            make.leading.equalToSuperview().offset(38)
-        }
-
-        contentView.addSubview(signInButton)
-        signInButton.snp.makeConstraints { make in
-            make.top.equalTo(signUpButton.snp.bottom).offset(81)
-            make.leading.equalTo(alreadyRegisterLabel.snp.trailing).offset(10)
-        }
+        alreadyRegisterStackView.addArrangedSubview(alreadyRegisterLabel)
+        alreadyRegisterStackView.addArrangedSubview(signInButton)
+        bottomStackView.addArrangedSubview(alreadyRegisterStackView)
+        bottomStackView.addArrangedSubview(orLabel)
+        bottomStackView.addArrangedSubview(signUpSellerButton)
+        stackView.addArrangedSubview(bottomStackView)
         
-        contentView.addSubview(orLabel)
-        orLabel.snp.makeConstraints { make in
-            make.top.equalTo(alreadyRegisterLabel.snp.bottom).offset(33)
-            make.centerX.equalToSuperview()
-        }
-        
-        contentView.addSubview(signUpSellerButton)
-        signUpSellerButton.snp.makeConstraints { make in
-            make.top.equalTo(orLabel.snp.bottom).offset(23)
-            make.leading.equalToSuperview().offset(38)
+        alreadyRegisterStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         let customTitleView = createCustomTitleView(image: "bold-logo")
@@ -387,5 +329,9 @@ extension RegistrationViewController {
     
     @objc func signUpSellerButtonAction() {
         output.showSellerSignUp()
+    }
+    
+    @objc func signUpButtonAction() {
+        print("Try to create customer!")
     }
 }

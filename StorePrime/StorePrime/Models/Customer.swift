@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Сustomer.swift
 //  StorePrime
 //
 //  Created by Artyom Tabachenko on 04.07.2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - User
-struct User: Codable {
+struct Сustomer: Codable {
     let email, phoneNumber, name, surname: String
     let gender, birthdayDate: String
     let addressDto: AddressDto

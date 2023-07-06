@@ -27,7 +27,7 @@
 
 "name_textfield" = "Enter a name";
 "surname_textfield" = "Enter a surname";
-"date_of_birth_textfield" = "dd.mm.yyyy";
+"date_of_birth_textfield" = "yyyy.mm.dd";
 "address_textfield" = "Country, City, Street, House, Apartment";
 "phone_number_textfield" = "+7(___)-___-__-__";
 "email_textfield" = "Enter email";
@@ -40,5 +40,3 @@
 "sign_up_seller_button" = "Register as a seller";
 "sign_up_customer_button" = "Register as a customer";
 "account_management_button" = "Account management";
-
-

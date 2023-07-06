@@ -9,11 +9,11 @@ import Foundation
 import Moya
 
 
-class UserService {
-    let provider = MoyaProvider<UserTarget>()
+class СustomerService {
+    let provider = MoyaProvider<СustomerTarget>()
     
-    func createUser(user: User, completion: @escaping (Result<Void, Error>) -> Void) {
-        provider.request(.createUser(user: user)) { result in
+    func createСustomer(customer: Сustomer, completion: @escaping (Result<Void, Error>) -> Void) {
+        provider.request(.createCustomer(customer: customer)) { result in
             switch result {
             case .success:
                 completion(.success(()))
@@ -23,4 +23,3 @@ class UserService {
         }
     }
 }
-
