@@ -32,21 +32,21 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     
     private let signUpLabel: UILabel = {
         let label = UILabel()
-        label.text = "sign_up_label".localized
+        label.text = L10n.signUpLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
         return label
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "title_label".localized
+        label.text = L10n.titleLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let titleTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "title_textfield".localized
+        textField.placeholder = L10n.titleTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         textField.isUserInteractionEnabled = true
         return textField
@@ -54,14 +54,14 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     
     private let innLabel: UILabel = {
         let label = UILabel()
-        label.text = "inn_label".localized
+        label.text = L10n.innLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let innTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "inn_textfield".localized
+        textField.placeholder = L10n.innTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         textField.isUserInteractionEnabled = true
         return textField
@@ -69,42 +69,42 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     
     private let addressLabel: UILabel = {
         let label = UILabel()
-        label.text = "address_label".localized
+        label.text = L10n.addressLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let addressTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "address_textfield".localized
+        textField.placeholder = L10n.addressTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "email_label".localized
+        label.text = L10n.emailLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "email_textfield".localized
+        textField.placeholder = L10n.emailTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let passwordLabel: UILabel = {
         let label = UILabel()
-        label.text = "password_label".localized
+        label.text = L10n.passwordLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "password_textfield".localized
+        textField.placeholder = L10n.passwordTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
@@ -112,7 +112,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     private let signUpButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 47
-        button.setTitle("sign_up_button".localized, for: .normal)
+        button.setTitle(L10n.signUpButton, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor.customBlack
@@ -121,14 +121,14 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     
     private let alreadyRegisterLabel: UILabel = {
         let label = UILabel()
-        label.text = "already_register_label".localized
+        label.text = L10n.alreadyRegisterLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return label
     }()
     
     private let signInButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_in_button".localized, for: .normal)
+        button.setTitle(L10n.signInButton, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
@@ -145,14 +145,14 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     
     private let orLabel: UILabel = {
         let label = UILabel()
-        label.text = "or_label".localized
+        label.text = L10n.orLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return label
     }()
     
-    private let signUpSellerButton: UIButton = {
+    private let signUpCustomerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_up_customer_button".localized, for: .normal)
+        button.setTitle(L10n.signUpCustomerButton, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signUpSellerButtonAction), for: .touchUpInside)
@@ -241,7 +241,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         alreadyRegisterStackView.addArrangedSubview(signInButton)
         bottomStackView.addArrangedSubview(alreadyRegisterStackView)
         bottomStackView.addArrangedSubview(orLabel)
-        bottomStackView.addArrangedSubview(signUpSellerButton)
+        bottomStackView.addArrangedSubview(signUpCustomerButton)
         stackView.addArrangedSubview(bottomStackView)
         
         alreadyRegisterStackView.snp.makeConstraints { make in

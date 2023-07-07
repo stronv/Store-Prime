@@ -6,4 +6,5 @@ target 'StorePrime' do
   pod 'SnapKit'
   pod 'SwiftLint'
   pod 'Moya'
+  pod 'SwiftGen'
 end

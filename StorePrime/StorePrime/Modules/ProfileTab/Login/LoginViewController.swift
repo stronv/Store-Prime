@@ -29,35 +29,35 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     
     private let signInLabel: UILabel = {
         let label = UILabel()
-        label.text = "sign_in_label".localized
+        label.text = L10n.signInLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
         return label
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "email_label".localized
+        label.text = L10n.emailLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "email_textfield".localized
+        textField.placeholder = L10n.emailTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let passwordLabel: UILabel = {
         let label = UILabel()
-        label.text = "password_label".localized
+        label.text = L10n.passwordLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "password_textfield".localized
+        textField.placeholder = L10n.passwordTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
@@ -65,23 +65,24 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     private let signInButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 47
-        button.setTitle("sign_in_button".localized, for: .normal)
+        button.setTitle(L10n.signInButton, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
         button.backgroundColor = UIColor.customBlack
         return button
     }()
     
     private let notRegisteredYetLabel: UILabel = {
         let label = UILabel()
-        label.text = "not_registered_yet_label".localized
+        label.text = L10n.notRegisteredYetLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return label
     }()
     
     private let signUpButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_up_customer_button".localized, for: .normal)
+        button.setTitle(L10n.signUpButton, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
@@ -98,14 +99,14 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     
     private let orLabel: UILabel = {
         let label = UILabel()
-        label.text = "or_label".localized
+        label.text = L10n.orLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return label
     }()
     
     private let signUpSellerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_up_seller_button".localized, for: .normal)
+        button.setTitle(L10n.signUpSellerButton, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.addTarget(self, action: #selector(signUpSellerButtonAction), for: .touchUpInside)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
@@ -196,6 +197,11 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
             make.trailing.equalToSuperview()
         }
         
+        bottomStackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
         let customTitleView = createCustomTitleView(image: "bold-logo")
         navigationItem.titleView = customTitleView
         navigationItem.hidesBackButton = true
@@ -211,5 +217,9 @@ extension LoginViewController {
     // MARK: - Objc Methods
     @objc func signUpSellerButtonAction() {
         output.showSellerSignUp()
+    }
+    
+    @objc func signInButtonAction() {
+        output.authCustomer(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
 }

@@ -24,6 +24,9 @@
 "or_label" = "OR";
 "title_label" = "Title";
 "inn_label" = "INN";
+"finance_label" = "Finances";
+"bonuses_label" = "Bonuses";
+"purchases_label" = "Purchases";
 
 "name_textfield" = "Enter a name";
 "surname_textfield" = "Enter a surname";
@@ -37,6 +40,9 @@
 
 "sign_up_button" = "Sign Up";
 "sign_in_button" = "Sign In";
+"sign_out_button" = "Sign out";
 "sign_up_seller_button" = "Register as a seller";
 "sign_up_customer_button" = "Register as a customer";
 "account_management_button" = "Account management";
+"add_finances_button" = "Add";
+"orders_button" = "Orders";

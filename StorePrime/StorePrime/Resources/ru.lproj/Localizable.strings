@@ -24,6 +24,9 @@
 "or_label" = "ИЛИ";
 "title_label" = "Название";
 "inn_label" = "ИНН";
+"finance_label" = "Финансы";
+"bonuses_label" = "Бонусов";
+"purchases_label" = "Покупки";
 
 "name_textfield" = "Введите имя";
 "surname_textfield" = "Введите фамилию";
@@ -37,6 +40,9 @@
 
 "sign_up_button" = "Зарегистрироваться";
 "sign_in_button" = "Войти";
+"sign_out_button" = "Выйти";
 "sign_up_seller_button" = "Зарегистрироваться как продавец";
 "sign_up_customer_button" = "Зарегистрироваться как покупатель";
 "account_management_button" = "Управление аккаунтом";
+"add_finances_button" = "Добавить";
+"orders_button" = "Заказы";

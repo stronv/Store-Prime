@@ -8,7 +8,8 @@
 import Foundation
 
 protocol ProfilePresenterProtocol {
-    
+    func showBonucesView()
+    func showRegistration()
 }
 
 class ProfilePresenter: ProfilePresenterProtocol {
@@ -18,5 +19,13 @@ class ProfilePresenter: ProfilePresenterProtocol {
     init(_ moduleOutput: ProfileTabCoordinatorProtocol, view: ProfileViewControllerProtocol) {
         self.moduleOutput = moduleOutput
         self.view = view
+    }
+    
+    func showBonucesView() {
+        moduleOutput.toBonuces()
+    }
+    
+    func showRegistration() {
+        moduleOutput.toSignUp()
     }
 }

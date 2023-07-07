@@ -13,6 +13,7 @@ protocol ProfileTabCoordinatorProtocol: Coordinator {
     func toSellerSignUp()
     func toSignIn()
     func toProfile()
+    func toBonuces()
 }
 
 class ProfileTabCoordinator: ProfileTabCoordinatorProtocol {
@@ -51,5 +52,10 @@ class ProfileTabCoordinator: ProfileTabCoordinatorProtocol {
         let controller = ProfileViewController()
         controller.output = ProfilePresenter(self, view: controller)
         navigationController.setViewControllers([controller], animated: false)
+    }
+    
+    func toBonuces() {
+        let controller = AddBonucesViewController()
+        navigationController.pushViewController(controller, animated: true)
     }
 }

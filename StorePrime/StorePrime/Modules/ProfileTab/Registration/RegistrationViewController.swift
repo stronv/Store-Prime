@@ -13,7 +13,6 @@ protocol RegistrationViewControllerProtocol: AnyObject {
 }
 
 class RegistrationViewController: UIViewController, RegistrationViewControllerProtocol {
-    
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -31,21 +30,21 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     private let signUpLabel: UILabel = {
         let label = UILabel()
-        label.text = "sign_up_label".localized
+        label.text = L10n.signUpLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
         return label
     }()
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "name_label".localized
+        label.text = L10n.nameLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let nameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "name_textfield".localized
+        textField.placeholder = L10n.nameTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         textField.isUserInteractionEnabled = true
         return textField
@@ -53,41 +52,41 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     private let surnameLabel: UILabel = {
         let label = UILabel()
-        label.text = "surname_label".localized
+        label.text = L10n.surnameLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let surnameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "surname_textfield".localized
+        textField.placeholder = L10n.surnameTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let dateOfBirthLabel: UILabel = {
         let label = UILabel()
-        label.text = "date_of_birth_label".localized
+        label.text = L10n.dateOfBirthLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let dateOfBirthTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "date_of_birth_textfield".localized
+        textField.placeholder = L10n.dateOfBirthTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let genderLabel: UILabel = {
         let label = UILabel()
-        label.text = "gender_label".localized
+        label.text = L10n.genderLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let genderSegmentedControl: UISegmentedControl = {
-        let items = ["male_string".localized, "female_string".localized]
+        let items = [L10n.maleString, L10n.femaleString]
         let segmentedControl = UISegmentedControl(items: items)
         return segmentedControl
     }()
@@ -102,56 +101,56 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     private let addressLabel: UILabel = {
         let label = UILabel()
-        label.text = "address_label".localized
+        label.text = L10n.addressLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let addressTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "address_textfield".localized
+        textField.placeholder = L10n.addressTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let phoneNumberLabel: UILabel = {
         let label = UILabel()
-        label.text = "phone_number_label".localized
+        label.text = L10n.phoneNumberLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let phoneNumberTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "phone_number_textfield".localized
+        textField.placeholder = L10n.phoneNumberTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "email_label".localized
+        label.text = L10n.emailLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "email_textfield".localized
+        textField.placeholder = L10n.emailTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
     
     private let passwordLabel: UILabel = {
         let label = UILabel()
-        label.text = "password_label".localized
+        label.text = L10n.passwordLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
     
     private let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "password_textfield".localized
+        textField.placeholder = L10n.passwordTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
@@ -159,7 +158,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     private let signUpButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 47
-        button.setTitle("sign_up_button".localized, for: .normal)
+        button.setTitle(L10n.signUpButton, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
@@ -169,7 +168,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     private let alreadyRegisterLabel: UILabel = {
         let label = UILabel()
-        label.text = "already_register_label".localized
+        label.text = L10n.alreadyRegisterLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         label.setContentHuggingPriority(UILayoutPriority(252), for: .horizontal)
         return label
@@ -177,7 +176,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     private let signInButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_in_button".localized, for: .normal)
+        button.setTitle(L10n.signInButton, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
@@ -195,14 +194,14 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     
     private let orLabel: UILabel = {
         let label = UILabel()
-        label.text = "or_label".localized
+        label.text = L10n.orLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return label
     }()
     
     private let signUpSellerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("sign_up_seller_button".localized, for: .normal)
+        button.setTitle(L10n.signUpSellerButton, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.addTarget(self, action: #selector(signUpSellerButtonAction), for: .touchUpInside)
@@ -319,12 +318,42 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let customTitleView = createCustomTitleView(image: "bold-logo")
         navigationItem.titleView = customTitleView
     }
+    
+    private func createCustomer() {
+        let addressText = addressTextField.text ?? ""
+        let addressComponents = addressText.components(separatedBy: ", ")
+        
+        guard addressComponents.count >= 4 else {
+            print("All fields should be fill!")
+            return
+        }
+        
+        let street = addressComponents[0]
+        let house = Int(addressComponents[1]) ?? 0
+        let apartment = addressComponents[2]
+        let city = addressComponents[3]
+        let country = addressComponents.count > 4 ? addressComponents[4] : ""
+        
+        let location = Location(country: country, city: city)
+        let addressDto = AddressDto(street: street, house: house, apartment: apartment, location: location)
+        
+        output.createCustomer(
+            email: emailTextField.text ?? "",
+            phoneNumber: phoneNumberTextField.text ?? "",
+            name: nameTextField.text ?? "",
+            surname: surnameTextField.text ?? "",
+            gender: "MALE",
+            birthdayDate: dateOfBirthTextField.text ?? "",
+            adressDto: addressDto,
+            passwordHash: "\(passwordTextField.text ?? "")"
+        )
+    }
 }
 
 extension RegistrationViewController {
     // MARK: - Objc Methods
     @objc func signInButtonAction() {
-        output.showSignIn()
+        output.showProfile()
     }
     
     @objc func signUpSellerButtonAction() {
@@ -332,6 +361,6 @@ extension RegistrationViewController {
     }
     
     @objc func signUpButtonAction() {
-        print("Try to create customer!")
+        createCustomer()
     }
 }

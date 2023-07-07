@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - User
+// MARK: - Сustomer
 struct Сustomer: Codable {
     let email, phoneNumber, name, surname: String
     let gender, birthdayDate: String

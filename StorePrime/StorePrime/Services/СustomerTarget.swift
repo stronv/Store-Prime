@@ -10,11 +10,12 @@ import Moya
 
 enum СustomerTarget {
     case createCustomer(customer: Сustomer)
+    case authCustomer(email: String, password: String)
 }
 
 extension СustomerTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: "https://1848-85-249-30-200.ngrok-free.app")  else { fatalError("Could not get URL") }
+        guard let url = URL(string: "https://2cc6-85-249-26-250.ngrok-free.app")  else { fatalError("Could not get URL") }
         return url
     }
     
@@ -22,6 +23,8 @@ extension СustomerTarget: TargetType {
         switch self {
         case .createCustomer:
             return "customer"
+        case .authCustomer:
+            return "auth/login"
         }
     }
     
@@ -29,18 +32,31 @@ extension СustomerTarget: TargetType {
         switch self {
         case .createCustomer:
             return .post
+        case .authCustomer:
+            return .post
         }
-        
     }
     
     var task: Moya.Task {
         switch self {
-        case .createCustomer(let user):
-            return .requestJSONEncodable(user)
+        case .createCustomer(let customer):
+            return .requestJSONEncodable(customer)
+            
+        case .authCustomer(let email, let password):
+            let parameters: [String: String] = [
+                "email": email,
+                "password": password
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
     
     var headers: [String: String]? {
-        return ["Content-Type": "application/json"]
+        switch self {
+        case .createCustomer:
+            return ["Content-Type": "application/json"]
+        case .authCustomer:
+            return ["Content-Type": "application/x-www-form-urlencoded"]
+        }
     }
 }
