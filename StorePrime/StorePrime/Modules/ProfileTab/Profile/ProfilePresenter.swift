@@ -10,6 +10,8 @@ import Foundation
 protocol ProfilePresenterProtocol {
     func showBonucesView()
     func showRegistration()
+    func showChangeProfile()
+    func showOrders()
 }
 
 class ProfilePresenter: ProfilePresenterProtocol {
@@ -27,5 +29,13 @@ class ProfilePresenter: ProfilePresenterProtocol {
     
     func showRegistration() {
         moduleOutput.toSignUp()
+    }
+    
+    func showChangeProfile() {
+        moduleOutput.toChangeProgile()
+    }
+    
+    func showOrders() {
+        moduleOutput.toOrders()
     }
 }

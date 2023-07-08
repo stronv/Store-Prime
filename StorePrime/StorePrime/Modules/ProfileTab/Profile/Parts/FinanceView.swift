@@ -44,17 +44,17 @@ class FinanceView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setup()
+        configure()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setup()
+        configure()
     }
     
     // MARK: - Private metohds
-    private func setup() {
+    private func configure() {
         addSubview(financeLabel)
         financeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(27)
@@ -84,7 +84,7 @@ class FinanceView: UIView {
 extension FinanceView {
     // MARK: - Objc functions
     @objc func addButtonAction() {
-        print("add Button tapped")
         delegate?.addButtonDelegate()
     }
 }
+

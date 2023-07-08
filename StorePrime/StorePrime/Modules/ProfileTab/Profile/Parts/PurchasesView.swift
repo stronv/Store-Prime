@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol OrderButtonDelegate: AnyObject {
+    func orderButtonDelegate()
+}
+
 class PurchasesView: UIView {
+    
+    weak var delegate: OrderButtonDelegate?
     
     // MARK: - UI
     private let purchasesLabel: UILabel = {
@@ -28,6 +34,7 @@ class PurchasesView: UIView {
         button.layer.borderColor = UIColor.boarderColor.cgColor
         button.layer.borderWidth = 1
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 0)
+        button.addTarget(self, action: #selector(ordersButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -35,17 +42,17 @@ class PurchasesView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setup()
+        configure()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setup()
+        configure()
     }
     
     // MARK: - Private metohds
-    private func setup() {
+    private func configure() {
         addSubview(purchasesLabel)
         purchasesLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(27)
@@ -64,5 +71,12 @@ class PurchasesView: UIView {
         layer.cornerRadius = 37
         layer.borderColor = UIColor.boarderColor.cgColor
         layer.borderWidth = 1
+    }
+}
+
+extension PurchasesView {
+    // MARK: - Objc functions
+    @objc func ordersButtonAction() {
+        delegate?.orderButtonDelegate()
     }
 }

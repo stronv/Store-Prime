@@ -27,6 +27,7 @@
 "finance_label" = "Финансы";
 "bonuses_label" = "Бонусов";
 "purchases_label" = "Покупки";
+"payment_amount_label" = "Сумма платежа";
 
 "name_textfield" = "Введите имя";
 "surname_textfield" = "Введите фамилию";
@@ -46,3 +47,4 @@
 "account_management_button" = "Управление аккаунтом";
 "add_finances_button" = "Добавить";
 "orders_button" = "Заказы";
+"update_button" = "Изменить";

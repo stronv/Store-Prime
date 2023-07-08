@@ -59,6 +59,8 @@ internal enum L10n {
   internal static let passwordLabel = L10n.tr("Localizable", "password_label", fallback: "Password")
   /// Enter the password
   internal static let passwordTextfield = L10n.tr("Localizable", "password_textfield", fallback: "Enter the password")
+  /// Payment amount
+  internal static let paymentAmountLabel = L10n.tr("Localizable", "payment_amount_label", fallback: "Payment amount")
   /// Phone number
   internal static let phoneNumberLabel = L10n.tr("Localizable", "phone_number_label", fallback: "Phone number")
   /// +7(___)-___-__-__
@@ -87,6 +89,8 @@ internal enum L10n {
   internal static let titleLabel = L10n.tr("Localizable", "title_label", fallback: "Title")
   /// Enter a name
   internal static let titleTextfield = L10n.tr("Localizable", "title_textfield", fallback: "Enter a name")
+  /// Update
+  internal static let updateButton = L10n.tr("Localizable", "update_button", fallback: "Update")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

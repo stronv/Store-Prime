@@ -14,6 +14,8 @@ protocol ProfileTabCoordinatorProtocol: Coordinator {
     func toSignIn()
     func toProfile()
     func toBonuces()
+    func toChangeProgile()
+    func toOrders()
 }
 
 class ProfileTabCoordinator: ProfileTabCoordinatorProtocol {
@@ -55,7 +57,20 @@ class ProfileTabCoordinator: ProfileTabCoordinatorProtocol {
     }
     
     func toBonuces() {
-        let controller = AddBonucesViewController()
+        let controller = AddBonusesViewController()
+        controller.output = BonusesPresenter(self, view: controller)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func toChangeProgile() {
+        let controller = ChangeProfileViewController()
+        controller.output = ChangeProfilePresenter(self, view: controller)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func toOrders() {
+        let controller = OrdersViewController()
+        controller.output = OrdersPresenter(self, view: controller)
         navigationController.pushViewController(controller, animated: true)
     }
 }

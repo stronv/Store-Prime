@@ -14,7 +14,6 @@ protocol ProfileViewControllerProtocol: AnyObject {
 
 class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
     // MARK: - UI
-    
     let profileImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "profilePicture")
@@ -48,6 +47,7 @@ class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
         button.setTitle(L10n.accountManagementButton, for: .normal)
         button.setTitleColor(.customOrange, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 15)
+        button.addTarget(self, action: #selector(accountManagementButtonAction), for: .touchUpInside)
         button.underline()
         return button
     }()
@@ -76,6 +76,7 @@ class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         financeView.delegate = self
+        purchasesView.delegate = self
         configure()
     }
     
@@ -92,7 +93,6 @@ class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
         profileImage.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.equalToSuperview().offset(27)
-            
         }
         
         view.addSubview(userDataStackView)
@@ -132,10 +132,14 @@ class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
     }
 }
 
-// MARK: - Delegate
-extension ProfileViewController: AddButtonDelegate {
+// MARK: - Delegates
+extension ProfileViewController: AddButtonDelegate, OrderButtonDelegate {
     func addButtonDelegate() {
         output.showBonucesView()
+    }
+    
+    func orderButtonDelegate() {
+        output.showOrders()
     }
 }
 
@@ -143,5 +147,9 @@ extension ProfileViewController: AddButtonDelegate {
 extension ProfileViewController {
     @objc func signOutButtonAction() {
         output.showRegistration()
+    }
+    
+    @objc func accountManagementButtonAction() {
+        output.showChangeProfile()
     }
 }

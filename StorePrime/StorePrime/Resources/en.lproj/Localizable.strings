@@ -27,6 +27,8 @@
 "finance_label" = "Finances";
 "bonuses_label" = "Bonuses";
 "purchases_label" = "Purchases";
+"payment_amount_label" = "Payment amount";
+
 
 "name_textfield" = "Enter a name";
 "surname_textfield" = "Enter a surname";
@@ -46,3 +48,4 @@
 "account_management_button" = "Account management";
 "add_finances_button" = "Add";
 "orders_button" = "Orders";
+"update_button" = "Update";

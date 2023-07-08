@@ -19,6 +19,7 @@
 		7C7966D82A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */; };
 		7C7D34F62A54027000A08B02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D34F52A54027000A08B02 /* LoginViewController.swift */; };
 		7C7D34F82A54027900A08B02 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D34F72A54027900A08B02 /* LoginPresenter.swift */; };
+		7C8033C02A588DE500218AD9 /* BonusesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8033BF2A588DE500218AD9 /* BonusesPresenter.swift */; };
 		7C99F0A92A558D6900BBEA9B /* SellerRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C99F0A82A558D6900BBEA9B /* SellerRegistrationViewController.swift */; };
 		7C99F0AB2A558DA300BBEA9B /* SellerRegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C99F0AA2A558DA300BBEA9B /* SellerRegistrationPresenter.swift */; };
 		7CBA01042A53698800FFC21F /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBA01012A53698800FFC21F /* CartViewController.swift */; };
@@ -42,6 +43,11 @@
 		7CDD53DD2A53672B00D21885 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53DC2A53672B00D21885 /* SearchViewController.swift */; };
 		7CDD53DF2A53676E00D21885 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD53DE2A53676E00D21885 /* SearchPresenter.swift */; };
 		7CE19B002A5846F600F21C52 /* PurchasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE19AFF2A5846F600F21C52 /* PurchasesView.swift */; };
+		7CE890A72A589A5C002D6652 /* ChangeProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE890A52A589A5C002D6652 /* ChangeProfilePresenter.swift */; };
+		7CE890A82A589A5C002D6652 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE890A62A589A5C002D6652 /* ChangeProfileViewController.swift */; };
+		7CE890AB2A592B6C002D6652 /* OrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE890AA2A592B6C002D6652 /* OrdersPresenter.swift */; };
+		7CE890AD2A592B77002D6652 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE890AC2A592B77002D6652 /* OrdersViewController.swift */; };
+		7CE890AF2A592E69002D6652 /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE890AE2A592E69002D6652 /* OrdersCollectionViewCell.swift */; };
 		7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D272A51D33D00AC979B /* AppDelegate.swift */; };
 		7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D292A51D33D00AC979B /* SceneDelegate.swift */; };
 		7CF87D322A51D33D00AC979B /* StorePrime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D302A51D33D00AC979B /* StorePrime.xcdatamodeld */; };
@@ -111,6 +117,7 @@
 		7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
 		7C7D34F52A54027000A08B02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7C7D34F72A54027900A08B02 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		7C8033BF2A588DE500218AD9 /* BonusesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusesPresenter.swift; sourceTree = "<group>"; };
 		7C99F0A82A558D6900BBEA9B /* SellerRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerRegistrationViewController.swift; sourceTree = "<group>"; };
 		7C99F0AA2A558DA300BBEA9B /* SellerRegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerRegistrationPresenter.swift; sourceTree = "<group>"; };
 		7CBA01012A53698800FFC21F /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +135,11 @@
 		7CDD53DC2A53672B00D21885 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7CDD53DE2A53676E00D21885 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		7CE19AFF2A5846F600F21C52 /* PurchasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesView.swift; sourceTree = "<group>"; };
+		7CE890A52A589A5C002D6652 /* ChangeProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeProfilePresenter.swift; sourceTree = "<group>"; };
+		7CE890A62A589A5C002D6652 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
+		7CE890AA2A592B6C002D6652 /* OrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPresenter.swift; sourceTree = "<group>"; };
+		7CE890AC2A592B77002D6652 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		7CE890AE2A592E69002D6652 /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CF87D242A51D33D00AC979B /* StorePrime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorePrime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF87D272A51D33D00AC979B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF87D292A51D33D00AC979B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */,
+				7CE890A92A592B54002D6652 /* Ordres */,
+				7CE890A42A589A5C002D6652 /* ChangeProfile */,
+				7CE19B012A58474400F21C52 /* Bonuces */,
 				7C99F0A72A558D5700BBEA9B /* SellerRegistration */,
 				7C754B802A5458C2009FE0C5 /* Profile */,
 				7CF87D772A51D5D300AC979B /* Registration */,
@@ -302,8 +317,28 @@
 			isa = PBXGroup;
 			children = (
 				7C6EEE7E2A583A2900C5DF00 /* AddBonucesViewController.swift */,
+				7C8033BF2A588DE500218AD9 /* BonusesPresenter.swift */,
 			);
 			path = Bonuces;
+			sourceTree = "<group>";
+		};
+		7CE890A42A589A5C002D6652 /* ChangeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				7CE890A52A589A5C002D6652 /* ChangeProfilePresenter.swift */,
+				7CE890A62A589A5C002D6652 /* ChangeProfileViewController.swift */,
+			);
+			path = ChangeProfile;
+			sourceTree = "<group>";
+		};
+		7CE890A92A592B54002D6652 /* Ordres */ = {
+			isa = PBXGroup;
+			children = (
+				7CE890AA2A592B6C002D6652 /* OrdersPresenter.swift */,
+				7CE890AC2A592B77002D6652 /* OrdersViewController.swift */,
+				7CE890AE2A592E69002D6652 /* OrdersCollectionViewCell.swift */,
+			);
+			path = Ordres;
 			sourceTree = "<group>";
 		};
 		7CF87D1B2A51D33D00AC979B = {
@@ -399,7 +434,6 @@
 		7CF87D762A51D5BA00AC979B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				7CE19B012A58474400F21C52 /* Bonuces */,
 				7C7966CE2A5492B800CEA8E4 /* ProfileTab */,
 				7CBA01002A53698800FFC21F /* Cart */,
 				7CDD53D92A53662B00D21885 /* Search */,
@@ -676,6 +710,7 @@
 				7C6EEE7D2A58366300C5DF00 /* FinanceView.swift in Sources */,
 				7CF87D322A51D33D00AC979B /* StorePrime.xcdatamodeld in Sources */,
 				7CBA01072A53698800FFC21F /* CartPresenter.swift in Sources */,
+				7CE890A82A589A5C002D6652 /* ChangeProfileViewController.swift in Sources */,
 				7CF87D6F2A51D53000AC979B /* Coordinator.swift in Sources */,
 				7C7D34F82A54027900A08B02 /* LoginPresenter.swift in Sources */,
 				7CF87D792A51D5EB00AC979B /* RegistrationViewController.swift in Sources */,
@@ -683,10 +718,12 @@
 				7CF87D8A2A51DA1200AC979B /* Fonts.swift in Sources */,
 				7CDD53DD2A53672B00D21885 /* SearchViewController.swift in Sources */,
 				7C99F0AB2A558DA300BBEA9B /* SellerRegistrationPresenter.swift in Sources */,
+				7CE890AF2A592E69002D6652 /* OrdersCollectionViewCell.swift in Sources */,
 				7CDD53D42A5363E600D21885 /* MainPageViewController.swift in Sources */,
 				7C7D34F62A54027000A08B02 /* LoginViewController.swift in Sources */,
 				7CDD53D02A53593E00D21885 /* MainTapBarCoordinator.swift in Sources */,
 				7CDD53C82A5315FC00D21885 /* UIbutton.swift in Sources */,
+				7CE890AD2A592B77002D6652 /* OrdersViewController.swift in Sources */,
 				7C754B822A545930009FE0C5 /* ProfileViewController.swift in Sources */,
 				7C6EEE7F2A583A2900C5DF00 /* AddBonucesViewController.swift in Sources */,
 				7CDD53D82A53640C00D21885 /* MainPagePresenter.swift in Sources */,
@@ -694,13 +731,16 @@
 				7C754B842A54596E009FE0C5 /* ProfilePresenter.swift in Sources */,
 				7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */,
 				7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */,
+				7CE890AB2A592B6C002D6652 /* OrdersPresenter.swift in Sources */,
 				7CBA01042A53698800FFC21F /* CartViewController.swift in Sources */,
 				7CE19B002A5846F600F21C52 /* PurchasesView.swift in Sources */,
+				7CE890A72A589A5C002D6652 /* ChangeProfilePresenter.swift in Sources */,
 				7C2C908C2A56EDDD00402B60 /* Error.swift in Sources */,
 				7C7966D62A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */,
 				7CF87D972A52130500AC979B /* UITextField.swift in Sources */,
 				7C7966CD2A5484D700CEA8E4 /* СustomerTarget.swift in Sources */,
 				7CDD53DF2A53676E00D21885 /* SearchPresenter.swift in Sources */,
+				7C8033C02A588DE500218AD9 /* BonusesPresenter.swift in Sources */,
 				7CC7F3F92A5483F900A7BD31 /* СustomerService.swift in Sources */,
 				7CBA010A2A53698800FFC21F /* CartCoordinator.swift in Sources */,
 				7CDD53CE2A53285100D21885 /* UIViewController.swift in Sources */,
