@@ -16,12 +16,18 @@ internal enum L10n {
   internal static let addFinancesButton = L10n.tr("Localizable", "add_finances_button", fallback: "Add")
   /// Address
   internal static let addressLabel = L10n.tr("Localizable", "address_label", fallback: "Address")
+  /// The address must be entered in the format: country, city, street, house, apartment
+  internal static let addressNotValidString = L10n.tr("Localizable", "address_not_valid_string", fallback: "The address must be entered in the format: country, city, street, house, apartment")
   /// Country, City, Street, House, Apartment
   internal static let addressTextfield = L10n.tr("Localizable", "address_textfield", fallback: "Country, City, Street, House, Apartment")
+  /// all fields should be fill
+  internal static let allFieldsShouldBeFillString = L10n.tr("Localizable", "all_fields_should_be_fill_string", fallback: "all fields should be fill")
   /// Already have an account?
   internal static let alreadyRegisterLabel = L10n.tr("Localizable", "already_register_label", fallback: "Already have an account?")
   /// Bonuses
   internal static let bonusesLabel = L10n.tr("Localizable", "bonuses_label", fallback: "Bonuses")
+  /// The date of birth must be entered in the format: YYYY-MM-DD
+  internal static let dateOfBirthIsNotValidString = L10n.tr("Localizable", "date_of_birth_is_not_valid_string", fallback: "The date of birth must be entered in the format: YYYY-MM-DD")
   /// Date of birth
   internal static let dateOfBirthLabel = L10n.tr("Localizable", "date_of_birth_label", fallback: "Date of birth")
   /// yyyy.mm.dd
@@ -30,6 +36,8 @@ internal enum L10n {
   internal static let emailLabel = L10n.tr("Localizable", "email_label", fallback: "Email")
   /// Enter email
   internal static let emailTextfield = L10n.tr("Localizable", "email_textfield", fallback: "Enter email")
+  /// Error
+  internal static let errorString = L10n.tr("Localizable", "error_string", fallback: "Error")
   /// Female
   internal static let femaleString = L10n.tr("Localizable", "female_string", fallback: "Female")
   /// Finances
@@ -45,18 +53,24 @@ internal enum L10n {
   /// 
   ///   Created by Artyom Tabachenko on 02.07.2023.
   internal static let maleString = L10n.tr("Localizable", "male_string", fallback: "Male")
+  /// The name must consist of 1 to 100 characters, not include numbers and special characters
+  internal static let nameIsNotValidString = L10n.tr("Localizable", "name_is_not_valid_string", fallback: "The name must consist of 1 to 100 characters, not include numbers and special characters")
   /// Name
   internal static let nameLabel = L10n.tr("Localizable", "name_label", fallback: "Name")
   /// Enter a name
   internal static let nameTextfield = L10n.tr("Localizable", "name_textfield", fallback: "Enter a name")
   /// Not registered yet?
   internal static let notRegisteredYetLabel = L10n.tr("Localizable", "not_registered_yet_label", fallback: "Not registered yet?")
+  /// The phone must consist of 11 digits
+  internal static let numberNotValidString = L10n.tr("Localizable", "number_not_valid_string", fallback: "The phone must consist of 11 digits")
   /// OR
   internal static let orLabel = L10n.tr("Localizable", "or_label", fallback: "OR")
   /// Orders
   internal static let ordersButton = L10n.tr("Localizable", "orders_button", fallback: "Orders")
   /// Password
   internal static let passwordLabel = L10n.tr("Localizable", "password_label", fallback: "Password")
+  /// The password must consist of 8 to 64 characters, include at least 1 lowercase Latin letter (a-z), 1 capital letter(A-Z), 1 digit (0-9), 1 special character(^?!=.*[]/@$%#&_-)
+  internal static let passwordNotValidString = L10n.tr("Localizable", "password_not_valid_string", fallback: "The password must consist of 8 to 64 characters, include at least 1 lowercase Latin letter (a-z), 1 capital letter(A-Z), 1 digit (0-9), 1 special character(^?!=.*[]/@$%#&_-)")
   /// Enter the password
   internal static let passwordTextfield = L10n.tr("Localizable", "password_textfield", fallback: "Enter the password")
   /// Payment amount
@@ -81,6 +95,8 @@ internal enum L10n {
   internal static let signUpLabel = L10n.tr("Localizable", "sign_up_label", fallback: "Registration")
   /// Register as a seller
   internal static let signUpSellerButton = L10n.tr("Localizable", "sign_up_seller_button", fallback: "Register as a seller")
+  /// The surname must consist of 1 to 100 characters, not include numbers and special characters
+  internal static let surnameIsNotValidString = L10n.tr("Localizable", "surname_is_not_valid_string", fallback: "The surname must consist of 1 to 100 characters, not include numbers and special characters")
   /// Surname
   internal static let surnameLabel = L10n.tr("Localizable", "surname_label", fallback: "Surname")
   /// Enter a surname

@@ -12,7 +12,7 @@ struct Сustomer: Codable {
     let email, phoneNumber, name, surname: String
     let gender, birthdayDate: String
     let addressDto: AddressDto
-    let passwordHash: String
+    let passwordHash: String?
 }
 
 // MARK: - AddressDto
@@ -26,4 +26,14 @@ struct AddressDto: Codable {
 // MARK: - Location
 struct Location: Codable {
     let country, city: String
+}
+
+// MARK: - ResponceCustomer
+struct ResponceCustomer: Codable {
+    let id: Int
+    let email, phoneNumber: String
+    let cardBalance: Int?
+    let name, surname, gender: String
+    let birthdayDate: [Int]
+    let addressDto: AddressDto
 }

@@ -10,12 +10,12 @@ import Moya
 
 enum СustomerTarget {
     case createCustomer(customer: Сustomer)
-    case authCustomer(email: String, password: String)
+    case updateCustomer(customer: Сustomer, token: String)
 }
 
 extension СustomerTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: "https://2cc6-85-249-26-250.ngrok-free.app")  else { fatalError("Could not get URL") }
+        guard let url = URL(string: "https://48f4-85-249-24-67.ngrok-free.app")  else { fatalError("Could not get URL") }
         return url
     }
     
@@ -23,8 +23,8 @@ extension СustomerTarget: TargetType {
         switch self {
         case .createCustomer:
             return "customer"
-        case .authCustomer:
-            return "auth/login"
+        case .updateCustomer:
+            return "customer"
         }
     }
     
@@ -32,8 +32,8 @@ extension СustomerTarget: TargetType {
         switch self {
         case .createCustomer:
             return .post
-        case .authCustomer:
-            return .post
+        case .updateCustomer:
+            return .put
         }
     }
     
@@ -41,13 +41,8 @@ extension СustomerTarget: TargetType {
         switch self {
         case .createCustomer(let customer):
             return .requestJSONEncodable(customer)
-            
-        case .authCustomer(let email, let password):
-            let parameters: [String: String] = [
-                "email": email,
-                "password": password
-            ]
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .updateCustomer(let customer, _):
+            return .requestJSONEncodable(customer)
         }
     }
     
@@ -55,8 +50,9 @@ extension СustomerTarget: TargetType {
         switch self {
         case .createCustomer:
             return ["Content-Type": "application/json"]
-        case .authCustomer:
-            return ["Content-Type": "application/x-www-form-urlencoded"]
+        case .updateCustomer(_, let token):
+            return ["Content-Type": "application/json", "Authorization": token]
+
         }
     }
 }

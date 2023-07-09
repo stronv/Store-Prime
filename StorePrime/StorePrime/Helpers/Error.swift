@@ -18,3 +18,10 @@ enum SignInError: Error {
     case noConnection
     case badRequest
 }
+//
+//enum GenericError: Error {
+//    case wrongData
+//    case noConnection
+//    case badRequest
+//    case error
+//}

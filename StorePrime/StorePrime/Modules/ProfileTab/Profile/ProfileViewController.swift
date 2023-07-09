@@ -146,7 +146,7 @@ extension ProfileViewController: AddButtonDelegate, OrderButtonDelegate {
 // MARK: - Objc functions
 extension ProfileViewController {
     @objc func signOutButtonAction() {
-        output.showRegistration()
+        output.signOut()
     }
     
     @objc func accountManagementButtonAction() {

@@ -17,13 +17,18 @@ protocol RegistrationPresenterProtocol {
 class RegistrationPresenter: RegistrationPresenterProtocol {
     private let moduleOutput: ProfileTabCoordinatorProtocol
     private weak var view: RegistrationViewControllerProtocol?
+    private let customerManager = CustomerManager()
+    private let authManager = AuthenticationManager()
     
     init(_ moduleOutput: ProfileTabCoordinatorProtocol,
          view: RegistrationViewControllerProtocol) {
         self.moduleOutput = moduleOutput
         self.view = view
     }
-    
+}
+
+// MARK: - Public methods
+extension RegistrationPresenter {
     func showSignIn() {
         moduleOutput.toSignIn()
     }
@@ -32,12 +37,10 @@ class RegistrationPresenter: RegistrationPresenterProtocol {
         moduleOutput.toSellerSignUp()
     }
     
-    func showProfile() { // - remove later
+    func showProfile() {
         moduleOutput.toProfile()
     }
     
-    private let customerService = СustomerService()
-
     func createCustomer(
         email: String,
         phoneNumber: String,
@@ -59,12 +62,23 @@ class RegistrationPresenter: RegistrationPresenterProtocol {
             passwordHash: passwordHash
         )
         
-        customerService.createСustomer(customer: customer) { result in
+        customerManager.createСustomer(customer: customer) { result in
             switch result {
             case .success:
                 print("Customer created successfully")
+                self.authManager.authenticate(email: email, password: passwordHash) { result in
+                    switch result {
+                    case .success:
+                        print("Customer auth successfully")
+                        self.showProfile()
+                    case .failure(let error):
+                        print("Error creating customer: \(error)")
+                    }
+                }
+                self.showProfile()
             case .failure(let error):
                 print("Error creating customer: \(error)")
+                self.view?.showAlertWithError(title: "Error", alertMessage: error.message)
             }
         }
     }

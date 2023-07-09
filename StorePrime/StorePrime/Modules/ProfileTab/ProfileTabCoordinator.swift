@@ -29,6 +29,11 @@ class ProfileTabCoordinator: ProfileTabCoordinatorProtocol {
     }
     
     func start() -> UIViewController {
+        if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
+            toProfile()
+        } else {
+            toSignUp()
+        }        
         return navigationController
     }
     

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol RegistrationViewControllerProtocol: AnyObject {
-    
+    func showAlertWithError(title: String, alertMessage: String)
 }
 
 class RegistrationViewController: UIViewController, RegistrationViewControllerProtocol {
@@ -348,12 +348,48 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
             passwordHash: "\(passwordTextField.text ?? "")"
         )
     }
+    
+    private func validateForm() -> Bool {
+        var allTextFieldsValid = false
+        if Validators.validateName(nameTextField.text ?? "")
+            && Validators.validateName(surnameTextField.text ?? "")
+            && Validators.validateDateOfBirth(dateOfBirthTextField.text ?? "")
+            && Validators.validateNumber(phone: phoneNumberTextField.text ?? "")
+            && Validators.validatePassword(password: passwordTextField.text ?? "") {
+            allTextFieldsValid = true
+            print("Validate successfully")
+        } else {
+            if !Validators.validateName(nameTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.nameIsNotValidString)
+            }
+            else if !Validators.validateName(surnameTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.surnameIsNotValidString)
+            }
+            else if !Validators.validateDateOfBirth(dateOfBirthTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.dateOfBirthIsNotValidString)
+            }
+            else if !Validators.validateNumber(phone: phoneNumberTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.numberNotValidString)
+            }
+            else if !Validators.validatePassword(password: passwordTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.passwordNotValidString)
+            }
+            else if nameTextField.text?.isEmpty ?? true
+                || surnameTextField.text?.isEmpty ?? true
+                || dateOfBirthTextField.text?.isEmpty ?? true
+                || phoneNumberTextField.text?.isEmpty ?? true
+                || passwordTextField.text?.isEmpty ?? true {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.allFieldsShouldBeFillString)
+            }
+        }
+        return allTextFieldsValid
+    }
 }
 
+// MARK: - Objc Methods
 extension RegistrationViewController {
-    // MARK: - Objc Methods
     @objc func signInButtonAction() {
-        output.showProfile()
+        output.showSignIn()
     }
     
     @objc func signUpSellerButtonAction() {
@@ -361,6 +397,16 @@ extension RegistrationViewController {
     }
     
     @objc func signUpButtonAction() {
-        createCustomer()
+        if validateForm() {
+            createCustomer()
+        } else {
+            print("Form not valid")
+        }
+    }
+}
+
+extension RegistrationViewController {
+    func showAlertWithError(title: String, alertMessage: String) {
+        showAlert(alertTitle: title, alertMessage: alertMessage)
     }
 }

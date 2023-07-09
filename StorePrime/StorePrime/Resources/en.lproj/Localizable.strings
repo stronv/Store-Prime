@@ -8,6 +8,14 @@
 
 "male_string" = "Male";
 "female_string" = "Female";
+"error_string" = "Error";
+"name_is_not_valid_string" = "The name must consist of 1 to 100 characters, not include numbers and special characters";
+"surname_is_not_valid_string" = "The surname must consist of 1 to 100 characters, not include numbers and special characters";
+"date_of_birth_is_not_valid_string" = "The date of birth must be entered in the format: YYYY-MM-DD";
+"number_not_valid_string" = "The phone must consist of 11 digits";
+"address_not_valid_string" = "The address must be entered in the format: country, city, street, house, apartment";
+"password_not_valid_string" =  "The password must consist of 8 to 64 characters, include at least 1 lowercase Latin letter (a-z), 1 capital letter(A-Z), 1 digit (0-9), 1 special character(^?!=.*[]\/@$%#&_-)";
+"all_fields_should_be_fill_string" = "all fields should be fill";
 
 "sign_up_label" = "Registration";
 "sign_in_label" = "Authorization";
@@ -28,7 +36,6 @@
 "bonuses_label" = "Bonuses";
 "purchases_label" = "Purchases";
 "payment_amount_label" = "Payment amount";
-
 
 "name_textfield" = "Enter a name";
 "surname_textfield" = "Enter a surname";

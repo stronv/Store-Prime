@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol LoginViewControllerProtocol: AnyObject {
-    
+    func showAlertWithError(title: String, alertMessage: String)    
 }
 
 class LoginViewController: UIViewController, LoginViewControllerProtocol {
@@ -214,12 +214,18 @@ extension LoginViewController {
         output.showSignUp()
     }
     
-    // MARK: - Objc Methods
     @objc func signUpSellerButtonAction() {
         output.showSellerSignUp()
     }
     
     @objc func signInButtonAction() {
         output.authCustomer(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+    }
+}
+
+// MARK: - Public Methods
+extension LoginViewController {
+    func showAlertWithError(title: String, alertMessage: String) {
+        showAlert(alertTitle: title, alertMessage: alertMessage)
     }
 }

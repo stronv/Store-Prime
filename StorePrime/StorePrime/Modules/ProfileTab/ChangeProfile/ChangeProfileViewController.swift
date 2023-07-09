@@ -155,6 +155,8 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor.customBlack
+        button.addTarget(self, action: #selector(updateButtonAction), for: .touchUpInside)
+
         return button
     }()
     
@@ -245,6 +247,72 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let backButton = createCustomButton(imageName: "backButton", selector: #selector(backButtonAction))
         navigationItem.leftBarButtonItem = backButton
     }
+    
+    private func createCustomer() {
+        let addressText = addressTextField.text ?? ""
+        let addressComponents = addressText.components(separatedBy: ", ")
+        
+        guard addressComponents.count >= 4 else {
+            print("All fields should be fill!")
+            return
+        }
+        
+        let street = addressComponents[0]
+        let house = Int(addressComponents[1]) ?? 0
+        let apartment = addressComponents[2]
+        let city = addressComponents[3]
+        let country = addressComponents.count > 4 ? addressComponents[4] : ""
+        
+        let location = Location(country: country, city: city)
+        let addressDto = AddressDto(street: street, house: house, apartment: apartment, location: location)
+        
+        output.updateCustomer(
+            email: emailTextField.text ?? "",
+            phoneNumber: phoneNumberTextField.text ?? "",
+            name: nameTextField.text ?? "",
+            surname: surnameTextField.text ?? "",
+            gender: "MALE",
+            birthdayDate: dateOfBirthTextField.text ?? "",
+            adressDto: addressDto,
+            passwordHash: "\(passwordTextField.text ?? "")"
+        )
+    }
+    
+    private func validateForm() -> Bool {
+        var allTextFieldsValid = false
+        if Validators.validateName(nameTextField.text ?? "")
+            && Validators.validateName(surnameTextField.text ?? "")
+            && Validators.validateDateOfBirth(dateOfBirthTextField.text ?? "")
+            && Validators.validateNumber(phone: phoneNumberTextField.text ?? "")
+            && Validators.validatePassword(password: passwordTextField.text ?? "") {
+            allTextFieldsValid = true
+            print("Validate successfully")
+        } else {
+            if !Validators.validateName(nameTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.nameIsNotValidString)
+            }
+            else if !Validators.validateName(surnameTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.surnameIsNotValidString)
+            }
+            else if !Validators.validateDateOfBirth(dateOfBirthTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.dateOfBirthIsNotValidString)
+            }
+            else if !Validators.validateNumber(phone: phoneNumberTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.numberNotValidString)
+            }
+            else if !Validators.validatePassword(password: passwordTextField.text ?? "") {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.passwordNotValidString)
+            }
+            else if nameTextField.text?.isEmpty ?? true
+                || surnameTextField.text?.isEmpty ?? true
+                || dateOfBirthTextField.text?.isEmpty ?? true
+                || phoneNumberTextField.text?.isEmpty ?? true
+                || passwordTextField.text?.isEmpty ?? true {
+                showAlert(alertTitle: L10n.errorString, alertMessage: L10n.allFieldsShouldBeFillString)
+            }
+        }
+        return allTextFieldsValid
+    }
 }
 
 // MARK: - Objc Methods
@@ -252,4 +320,14 @@ extension ChangeProfileViewController {
     @objc func backButtonAction() {
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func updateButtonAction() {
+        if validateForm() {
+            createCustomer()
+        } else {
+            print("Form not valid")
+        }
+    }
 }
+
+

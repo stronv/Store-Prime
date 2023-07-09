@@ -11,6 +11,7 @@ protocol LoginPresenterProtocol {
     func showSignUp()
     func showSellerSignUp()
     func authCustomer(email: String, password: String)
+    func showProtfile()
 }
 
 class LoginPresenter: LoginPresenterProtocol {
@@ -30,16 +31,24 @@ class LoginPresenter: LoginPresenterProtocol {
         moduleOutput.toSellerSignUp()
     }
     
-    private let customerService = СustomerService()
+    func showProtfile() {
+        moduleOutput.toProfile()
+    }
+    
+    private let authManager = AuthenticationManager()
     
     func authCustomer(email: String, password: String) {
-        customerService.authCustomer(email: email, password: password) { result in
+        authManager.authenticate(email: email, password: password) { result in
             switch result {
-            case .success:
+            case let .success(creds):
+                self.showProtfile()
                 print("Customer authenticated successfully")
+                print(creds.accessToken)
+                print(creds.refreshToken)
                 self.moduleOutput.toProfile()
             case .failure(let error):
                 print("Error authenticate customer: \(error)")
+                self.view?.showAlertWithError(title: "Error", alertMessage: error.message)
             }
         }
     }
