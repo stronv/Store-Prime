@@ -26,6 +26,10 @@ internal enum L10n {
   internal static let alreadyRegisterLabel = L10n.tr("Localizable", "already_register_label", fallback: "Already have an account?")
   /// Bonuses
   internal static let bonusesLabel = L10n.tr("Localizable", "bonuses_label", fallback: "Bonuses")
+  /// The data cannot be updated, try to re-log in to your account
+  internal static let dataCannotUploadedString = L10n.tr("Localizable", "data_cannot_uploaded_string", fallback: "The data cannot be updated, try to re-log in to your account")
+  /// the data has been successfully updated!
+  internal static let dataSuccessfullyUpdatedString = L10n.tr("Localizable", "data_successfully_updated_string", fallback: "the data has been successfully updated!")
   /// The date of birth must be entered in the format: YYYY-MM-DD
   internal static let dateOfBirthIsNotValidString = L10n.tr("Localizable", "date_of_birth_is_not_valid_string", fallback: "The date of birth must be entered in the format: YYYY-MM-DD")
   /// Date of birth
@@ -44,6 +48,8 @@ internal enum L10n {
   internal static let financeLabel = L10n.tr("Localizable", "finance_label", fallback: "Finances")
   /// Gender
   internal static let genderLabel = L10n.tr("Localizable", "gender_label", fallback: "Gender")
+  /// Have time to buy
+  internal static let haveTimeToBuyLabel = L10n.tr("Localizable", "have_time_to_buy_label", fallback: "Have time to buy")
   /// INN
   internal static let innLabel = L10n.tr("Localizable", "inn_label", fallback: "INN")
   /// Enter INN
@@ -53,6 +59,8 @@ internal enum L10n {
   /// 
   ///   Created by Artyom Tabachenko on 02.07.2023.
   internal static let maleString = L10n.tr("Localizable", "male_string", fallback: "Male")
+  /// Maybe you'll like it
+  internal static let maybeYouWillLikeItLabel = L10n.tr("Localizable", "maybe_you_will_like_it_label", fallback: "Maybe you'll like it")
   /// The name must consist of 1 to 100 characters, not include numbers and special characters
   internal static let nameIsNotValidString = L10n.tr("Localizable", "name_is_not_valid_string", fallback: "The name must consist of 1 to 100 characters, not include numbers and special characters")
   /// Name
@@ -95,6 +103,8 @@ internal enum L10n {
   internal static let signUpLabel = L10n.tr("Localizable", "sign_up_label", fallback: "Registration")
   /// Register as a seller
   internal static let signUpSellerButton = L10n.tr("Localizable", "sign_up_seller_button", fallback: "Register as a seller")
+  /// Success!
+  internal static let successString = L10n.tr("Localizable", "success_string", fallback: "Success!")
   /// The surname must consist of 1 to 100 characters, not include numbers and special characters
   internal static let surnameIsNotValidString = L10n.tr("Localizable", "surname_is_not_valid_string", fallback: "The surname must consist of 1 to 100 characters, not include numbers and special characters")
   /// Surname

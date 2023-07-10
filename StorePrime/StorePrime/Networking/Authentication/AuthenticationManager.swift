@@ -41,13 +41,10 @@ class AuthenticationManager: AuthenticationManagerProtocol {
             switch result {
             case let .success(response):
                 if let error = try? JSONDecoder().decode(GenericError.self, from: response.data) {
-                    print(response.statusCode)
                     return completion(.failure(error))
                 } else {
-                    print(response.statusCode)
                     UserDefaults.standard.removeObject(forKey: "accessToken")
                     UserDefaults.standard.removeObject(forKey: "refreshToken")
-                    
                     return completion(.success(Void()))
                 }
             case let .failure(error):

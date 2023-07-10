@@ -28,9 +28,12 @@ internal enum Asset {
   internal static let launchScreen = ImageAsset(name: "LaunchScreen")
   internal static let backButton = ImageAsset(name: "backButton")
   internal static let boldLogo = ImageAsset(name: "bold-logo")
+  internal static let cardExample = ImageAsset(name: "cardExample")
+  internal static let cardProduct = ImageAsset(name: "cardProduct")
   internal static let logo = ImageAsset(name: "logo")
   internal static let logoWithText = ImageAsset(name: "logoWithText")
   internal static let profilePicture = ImageAsset(name: "profilePicture")
+  internal static let searchIcon = ImageAsset(name: "searchIcon")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

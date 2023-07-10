@@ -40,11 +40,9 @@ class LoginPresenter: LoginPresenterProtocol {
     func authCustomer(email: String, password: String) {
         authManager.authenticate(email: email, password: password) { result in
             switch result {
-            case let .success(creds):
+            case .success:
                 self.showProtfile()
                 print("Customer authenticated successfully")
-                print(creds.accessToken)
-                print(creds.refreshToken)
                 self.moduleOutput.toProfile()
             case .failure(let error):
                 print("Error authenticate customer: \(error)")

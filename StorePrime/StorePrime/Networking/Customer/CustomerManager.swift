@@ -41,7 +41,6 @@ final class CustomerManager: CustomerManagerProtocol {
         provider.request(.updateCustomer(customer: customer, token: bearerToken)) { result in
             switch result {
             case let .success(response):
-                print(response.statusCode)
                 if let customer = try? JSONDecoder().decode(ResponceCustomer.self, from: response.data) {
                     return completion(.success(customer))
                 } else if let error = try? JSONDecoder().decode(GenericError.self, from: response.data) {

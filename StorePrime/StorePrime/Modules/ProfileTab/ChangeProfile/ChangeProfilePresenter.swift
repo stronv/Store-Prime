@@ -40,8 +40,10 @@ class ChangeProfilePresenter: ChangeProfilePresenterProtocol {
                 switch result {
                 case .success:
                     print("Customer updated successfully")
+                    self.view?.createAlert(title: L10n.successString, alertMessage: L10n.dataSuccessfullyUpdatedString)
                 case .failure:
                     print("Customer updated failed")
+                    self.view?.createAlert(title: L10n.errorString, alertMessage: L10n.dataCannotUploadedString)
                 }
             }
         }

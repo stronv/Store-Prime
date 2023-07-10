@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol ChangeProfileViewControllerProtocol: AnyObject {
-    
+    func createAlert(title: String, alertMessage: String)
 }
 
 class ChangeProfileViewController: UIViewController, ChangeProfileViewControllerProtocol {
@@ -148,7 +148,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         return textField
     }()
     
-    private let signUpButton: UIButton = {
+    private let updateButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 47
         button.setTitle(L10n.updateButton, for: .normal)
@@ -237,8 +237,8 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         addInputToStackView(stackView: stackView, label: emailLabel, textField: emailTextField)
         addInputToStackView(stackView: stackView, label: passwordLabel, textField: passwordTextField)
         
-        stackView.addArrangedSubview(signUpButton)
-        signUpButton.snp.makeConstraints { make in
+        stackView.addArrangedSubview(updateButton)
+        updateButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(18)
             make.trailing.equalToSuperview().inset(18)
             make.height.equalTo(93)
@@ -330,4 +330,9 @@ extension ChangeProfileViewController {
     }
 }
 
-
+// MARK: - Public Methods
+extension ChangeProfileViewController {
+    func createAlert(title: String, alertMessage: String) {
+        showAlert(alertTitle: title, alertMessage: alertMessage)
+    }
+}
