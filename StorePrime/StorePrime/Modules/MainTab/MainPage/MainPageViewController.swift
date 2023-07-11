@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol MainPageViewControllerProtocol: AnyObject {
-    
+    func reloadData()
 }
 
 class MainPageViewController: UIViewController, MainPageViewControllerProtocol {
@@ -24,15 +24,28 @@ class MainPageViewController: UIViewController, MainPageViewControllerProtocol {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10.0, left: 1.0, bottom: 1.0, right: 1.0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
-        collectionView.register(HeaderCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionView.identifier)
+        collectionView.register(
+            ProductCollectionViewCell.self,
+            forCellWithReuseIdentifier: ProductCollectionViewCell.identifier
+        )
+        collectionView.register(
+            HeaderCollectionView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: HeaderCollectionView.identifier
+        )
         collectionView.backgroundColor = .clear
         return collectionView
     }()
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        output.viewDidLoadEvent()
+        configure()
+    }
+    // MARK: - MVP Properties
+    var output: MainPagePresenter!
+    
+    private func configure() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -52,23 +65,31 @@ class MainPageViewController: UIViewController, MainPageViewControllerProtocol {
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    var output: MainPagePresenter!
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension MainPageViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
+        return output.randomProducts.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: ProductCollectionViewCell.identifier,
             for: indexPath) as? ProductCollectionViewCell
         else {
             fatalError("Couldn't register cell")
         }
-        cell.backgroundColor = .clear
+        
+        let randpomProduct = output.randomProducts[indexPath.item]
+        cell.configureCell(product: randpomProduct)
+//        print("From cellForItemAt item: \(randpomProduct))")
         return cell
     }
     
@@ -81,9 +102,24 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.width/1.3)
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionView.identifier, for: indexPath) as! HeaderCollectionView
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: HeaderCollectionView.identifier,
+                for: indexPath
+            ) as? HeaderCollectionView else {
+                fatalError("Couldn't register header")
+            }
+            if let randomProduct = output.product {
+                headerView.configure(randomProduct: randomProduct)
+            } else {
+                print("error to configure header")
+            }
             return headerView
         }
         return UICollectionReusableView()
@@ -94,7 +130,10 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
         layout collectionViewLayout: UICollectionViewLayout,
         referenceSizeForHeaderInSection section: Int
     ) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: view.bounds.height / 3)
+        return CGSize(
+            width: collectionView.bounds.width,
+            height: view.bounds.height / 3
+        )
     }
     
     func collectionView(
@@ -116,5 +155,19 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
         minimumLineSpacingForSectionAt section: Int
     ) -> CGFloat {
         return 10
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didDeselectItemAt indexPath: IndexPath
+    ) {
+        output.showProductDetail(indexPath: indexPath)
+    }
+}
+
+// MARK: - Public Methods
+extension MainPageViewController {
+    func reloadData() {
+        collectionView.reloadData()
     }
 }

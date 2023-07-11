@@ -15,23 +15,21 @@ class HeaderCollectionView: UICollectionReusableView {
     private let productImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "cardExample")
+        image.layer.cornerRadius = 35
         return image
     }()
     
-    private let mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.alignment = .leading
-        stackView.backgroundColor = .customBlack
-        stackView.spacing = 0
-        stackView.layer.cornerRadius = 24
-        return stackView
+    private let view: UIView = {
+        let view = UIView()
+        view.backgroundColor = .customBlack
+        view.layer.cornerRadius = 35
+        
+        return view
     }()
     
     private let bottomStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.backgroundColor = .customBlack
         stackView.alignment = .center
         return stackView
     }()
@@ -46,7 +44,6 @@ class HeaderCollectionView: UICollectionReusableView {
     
     private let productTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "тушь sesnsa  tional"
         label.font = UIFont(name: Fonts.exo2Bold, size: 15)
         label.textColor = .white
         return label
@@ -54,7 +51,6 @@ class HeaderCollectionView: UICollectionReusableView {
     
     private let productPriceLabel: UILabel = {
         let label = UILabel()
-        label.text = "2849P"
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
         label.textColor = .white
         return label
@@ -79,26 +75,41 @@ class HeaderCollectionView: UICollectionReusableView {
             make.height.equalToSuperview().dividedBy(1.3)
         }
         
-        addSubview(mainStackView)
-        mainStackView.snp.makeConstraints { make in
+        addSubview(view)
+        view.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.top.equalTo(productImage.snp.bottom).inset(50)
-            make.height.equalToSuperview().dividedBy(3)
+            make.bottom.equalToSuperview()
         }
         
-        mainStackView.addArrangedSubview(haveTimeToBuyLabel)
+        view.addSubview(haveTimeToBuyLabel)
         haveTimeToBuyLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(15)
         }
-        
+
         bottomStackView.addArrangedSubview(productTitleLabel)
         bottomStackView.addArrangedSubview(productPriceLabel)
-        mainStackView.addArrangedSubview(bottomStackView)
+        view.addSubview(bottomStackView)
         bottomStackView.snp.makeConstraints { make in
+            make.top.equalTo(haveTimeToBuyLabel.snp.bottom).offset(15)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().inset(20)
         }
+    }
+}
+
+// MARK: - Public Methods
+extension HeaderCollectionView {
+    func configure(randomProduct: RandomProduct) {
+        productTitleLabel.text = randomProduct.title
+        productPriceLabel.text = "\(randomProduct.price)"
+        guard let imageURL = URL(string: "https://ccef-85-249-24-67.ngrok-free.app/photos/64ac5d364d66024a32278818") else {
+            print("Couldn't get URL")
+            return
+        }
+        productImage.downloaded(from: imageURL)
+        
     }
 }

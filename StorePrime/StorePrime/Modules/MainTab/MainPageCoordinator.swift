@@ -9,6 +9,7 @@ import UIKit
 
 protocol MainPageCoordinatorProtocol: Coordinator {
     func start() -> UIViewController
+    func toProductDetail(product: RandomProduct)
 }
 
 class MainPageCoordinator: MainPageCoordinatorProtocol {
@@ -25,5 +26,12 @@ class MainPageCoordinator: MainPageCoordinatorProtocol {
     
     func start() -> UIViewController {
         return navigationController
+    }
+    
+    func toProductDetail(product: RandomProduct) {
+        let controller = ProductDetailViewController()
+        controller.output = ProductDetailViewPresenter(self, view: controller)
+        controller.setupData(product: product)
+        navigationController.pushViewController(controller, animated: true)
     }
 }

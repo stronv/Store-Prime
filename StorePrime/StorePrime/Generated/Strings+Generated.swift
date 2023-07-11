@@ -26,6 +26,10 @@ internal enum L10n {
   internal static let alreadyRegisterLabel = L10n.tr("Localizable", "already_register_label", fallback: "Already have an account?")
   /// Bonuses
   internal static let bonusesLabel = L10n.tr("Localizable", "bonuses_label", fallback: "Bonuses")
+  /// Buy
+  internal static let buyButton = L10n.tr("Localizable", "buy_button", fallback: "Buy")
+  /// Category
+  internal static let categoryLabel = L10n.tr("Localizable", "category_label", fallback: "Category")
   /// The data cannot be updated, try to re-log in to your account
   internal static let dataCannotUploadedString = L10n.tr("Localizable", "data_cannot_uploaded_string", fallback: "The data cannot be updated, try to re-log in to your account")
   /// the data has been successfully updated!
@@ -75,6 +79,8 @@ internal enum L10n {
   internal static let orLabel = L10n.tr("Localizable", "or_label", fallback: "OR")
   /// Orders
   internal static let ordersButton = L10n.tr("Localizable", "orders_button", fallback: "Orders")
+  /// Parameters
+  internal static let parametersLabel = L10n.tr("Localizable", "parameters_label", fallback: "Parameters")
   /// Password
   internal static let passwordLabel = L10n.tr("Localizable", "password_label", fallback: "Password")
   /// The password must consist of 8 to 64 characters, include at least 1 lowercase Latin letter (a-z), 1 capital letter(A-Z), 1 digit (0-9), 1 special character(^?!=.*[]/@$%#&_-)

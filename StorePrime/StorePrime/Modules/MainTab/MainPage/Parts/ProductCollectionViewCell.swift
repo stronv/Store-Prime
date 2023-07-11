@@ -48,6 +48,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     private func configure() {
         contentView.layer.cornerRadius = 21
+        contentView.clipsToBounds = true
         contentView.layer.borderWidth = 0.4
         contentView.layer.borderColor =  UIColor.customBlack.cgColor
         contentView.addSubview(imageView)
@@ -71,5 +72,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().inset(15)
         }
+        
+    }
+    
+    func configureCell(product: RandomProduct) {
+        guard let imageURL = URL(string: "https://ccef-85-249-24-67.ngrok-free.app/photos/\(product.imageIDS.first ?? "")") else {
+            print("Couldn't get URL")
+            return
+        }
+        imageView.downloaded(from: imageURL)
+        titleLabel.text = product.title
+        priceLabel.text = "\(product.price)"
     }
 }

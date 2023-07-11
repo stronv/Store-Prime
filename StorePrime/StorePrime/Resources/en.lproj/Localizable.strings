@@ -41,6 +41,8 @@
 "payment_amount_label" = "Payment amount";
 "have_time_to_buy_label" = "Have time to buy";
 "maybe_you_will_like_it_label" = "Maybe you'll like it";
+"parameters_label" = "Parameters";
+"category_label" = "Category";
 
 "name_textfield" = "Enter a name";
 "surname_textfield" = "Enter a surname";
@@ -61,3 +63,4 @@
 "add_finances_button" = "Add";
 "orders_button" = "Orders";
 "update_button" = "Update";
+"buy_button" = "Buy";

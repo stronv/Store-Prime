@@ -15,7 +15,7 @@ enum AuthenticationTarget {
 
 extension AuthenticationTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: "https://48f4-85-249-24-67.ngrok-free.app")  else { fatalError("Could not get URL") }
+        guard let url = URL(string: "https://ccef-85-249-24-67.ngrok-free.app")  else { fatalError("Could not get URL") }
         return url
     }
     

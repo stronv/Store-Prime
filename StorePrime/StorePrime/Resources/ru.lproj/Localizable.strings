@@ -41,6 +41,8 @@
 "payment_amount_label" = "Сумма платежа";
 "have_time_to_buy_label" = "Успейте купить";
 "maybe_you_will_like_it_label" = "Возможно, вам понравится";
+"parameters_label" = "Параметры";
+"category_label" = "Категория";
 
 "name_textfield" = "Введите имя";
 "surname_textfield" = "Введите фамилию";
@@ -61,3 +63,4 @@
 "add_finances_button" = "Добавить";
 "orders_button" = "Заказы";
 "update_button" = "Изменить";
+"buy_button" = "Купить";
