@@ -29,6 +29,7 @@ class ParametersView: UIView {
         let label = UILabel()
         label.text = "Посуда"
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -85,14 +86,22 @@ class ParametersView: UIView {
         addressLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(17)
             make.trailing.equalToSuperview().inset(17)
-            make.top.equalTo(categoryLabel.snp.bottom).offset(30)
+            make.top.equalTo(categoryLabel.snp.bottom).offset(60)
         }
         
         addSubview(addressValueLabel)
         addressValueLabel.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(17)
             make.leading.equalTo(addressLabel.snp.leading).offset(250)
-            make.top.equalTo(categoryLabel.snp.bottom).offset(30)
+            make.top.equalTo(categoryLabel.snp.bottom).offset(60)
         }
+    }
+}
+
+// MARK: - Public methods
+extension ParametersView {
+    func configureView(product: Product) {
+        categoryValueLabel.text = product.categories.first
+        addressValueLabel.text = "\(product.sellerLocation.country), \(product.sellerLocation.city)"
     }
 }

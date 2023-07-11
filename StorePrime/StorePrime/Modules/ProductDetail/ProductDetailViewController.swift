@@ -57,13 +57,24 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
         return parametersView
     }()
     
+    private let addToCartButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 47
+        button.setTitle(L10n.addToCartButton, for: .normal)
+        button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(addToCartButtonAction), for: .touchUpInside)
+        button.backgroundColor = UIColor.customBlack
+        return button
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
     // MARK: - MVP Properties
-    var output: ProductDetailViewPresenterProtocol!
+    var output: ProductDetailViewPresenter!
     
     // MARK: - Private methods
     private func configure() {
@@ -92,7 +103,7 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
         descriptionView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().inset(10)
-            make.height.equalTo(350)
+            make.height.equalTo(200)
         }
         
         stackView.addArrangedSubview(parametersView)
@@ -102,6 +113,12 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
             make.height.equalTo(220)
         }
         
+        stackView.addArrangedSubview(addToCartButton)
+        addToCartButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.height.equalTo(93)
+        }
         let backButton = createCustomButton(imageName: "backButton", selector: #selector(backButtonAction))
         navigationItem.leftBarButtonItem = backButton
     }
@@ -112,11 +129,21 @@ extension ProductDetailViewController {
     @objc func backButtonAction() {
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func addToCartButtonAction() {
+        output.addToCart(productID: output.product.id, quantity: 1)
+    }
 }
 
 // MARK: - Public Methods
 extension ProductDetailViewController {
-    func setupData(product: RandomProduct) {
-        print(product)
+    func setupData(product: Product) {
+        descriptionView.configureDescription(product: product)
+        guard let imageURL = URL(string: "\(APIBaseURL.defaultURL.url)/photos/\(product.imageIDS.first ?? "")") else {
+            print("Couldn't get URL")
+            return
+        }
+        imageView.downloaded(from: imageURL)
+        parametersView.configureView(product: product)
     }
 }

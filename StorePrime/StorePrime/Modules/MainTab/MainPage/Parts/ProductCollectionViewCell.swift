@@ -75,13 +75,23 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configureCell(product: RandomProduct) {
-        guard let imageURL = URL(string: "https://ccef-85-249-24-67.ngrok-free.app/photos/\(product.imageIDS.first ?? "")") else {
+    func configureCell(product: Product) {
+        guard let imageURL = URL(string: "\(APIBaseURL.defaultURL.url)/photos/\(product.imageIDS.first ?? "")") else {
             print("Couldn't get URL")
             return
         }
         imageView.downloaded(from: imageURL)
         titleLabel.text = product.title
         priceLabel.text = "\(product.price)"
+    }
+    
+    func configureCellForCart(cartProduct: ProductInCart) {
+        guard let imageURL = URL(string: "\(APIBaseURL.defaultURL.url)/photos/\(cartProduct.product.imageIDS.first ?? "")") else {
+            print("Couldn't get URL")
+            return
+        }
+        imageView.downloaded(from: imageURL)
+        titleLabel.text = cartProduct.product.title
+        priceLabel.text = "\(cartProduct.product.price)"
     }
 }

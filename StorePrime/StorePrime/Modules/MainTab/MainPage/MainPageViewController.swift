@@ -80,16 +80,16 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
+        guard let cell = collectionView
+            .dequeueReusableCell(
             withReuseIdentifier: ProductCollectionViewCell.identifier,
             for: indexPath) as? ProductCollectionViewCell
         else {
             fatalError("Couldn't register cell")
         }
-        
-        let randpomProduct = output.randomProducts[indexPath.item]
+        let randpomProduct = output.randomProducts[indexPath.row]
+        print(randpomProduct)
         cell.configureCell(product: randpomProduct)
-//        print("From cellForItemAt item: \(randpomProduct))")
         return cell
     }
     
@@ -156,11 +156,12 @@ extension MainPageViewController: UICollectionViewDelegate, UICollectionViewData
     ) -> CGFloat {
         return 10
     }
-    
+
     func collectionView(
         _ collectionView: UICollectionView,
-        didDeselectItemAt indexPath: IndexPath
+        didSelectItemAt indexPath: IndexPath
     ) {
+        collectionView.deselectItem(at: indexPath, animated: true)
         output.showProductDetail(indexPath: indexPath)
     }
 }

@@ -21,8 +21,8 @@ class MainPagePresenter: MainPagePresenterProtocol {
         self.view = view
     }
     
-    var product: RandomProduct?
-    var randomProducts: [RandomProduct] = []
+    var product: Product?
+    var randomProducts: [Product] = []
 }
 
 // MARK: - Public Merhods
@@ -35,17 +35,18 @@ extension MainPagePresenter {
         productManager.getRandomProduct { result in
             switch result {
             case .success(let randomProduct):
-                self.view?.reloadData()
                 self.product = randomProduct
+                self.view?.reloadData()
             case .failure(let error):
                 print(error)
             }
         }
         
-        productManager.getRandomProducts(amount: 10) { result in
+        productManager.getRandomProducts(amount: 5) { result in
             switch result {
             case .success(let randomProducts):
                 self.randomProducts = randomProducts
+                print(randomProducts)
                 self.view?.reloadData()
             case .failure(let error):
                 print(error)

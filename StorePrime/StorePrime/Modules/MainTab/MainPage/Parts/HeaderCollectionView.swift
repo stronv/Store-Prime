@@ -102,10 +102,10 @@ class HeaderCollectionView: UICollectionReusableView {
 
 // MARK: - Public Methods
 extension HeaderCollectionView {
-    func configure(randomProduct: RandomProduct) {
+    func configure(randomProduct: Product) {
         productTitleLabel.text = randomProduct.title
         productPriceLabel.text = "\(randomProduct.price)"
-        guard let imageURL = URL(string: "https://ccef-85-249-24-67.ngrok-free.app/photos/64ac5d364d66024a32278818") else {
+        guard let imageURL = URL(string: "\(APIBaseURL.defaultURL.url)/photos/\(randomProduct.imageIDS.first ?? "")") else {
             print("Couldn't get URL")
             return
         }

@@ -15,8 +15,7 @@ enum СustomerTarget {
 
 extension СustomerTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: "https://ccef-85-249-24-67.ngrok-free.app")  else { fatalError("Could not get URL") }
-        return url
+        return APIBaseURL.defaultURL.url
     }
     
     var path: String {

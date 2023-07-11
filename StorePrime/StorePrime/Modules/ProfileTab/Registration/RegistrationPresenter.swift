@@ -57,7 +57,7 @@ extension RegistrationPresenter {
             name: name,
             surname: surname,
             gender: gender,
-            birthdayDate: birthdayDate,
+            birthdayDate: birthdayDate, 
             addressDto: adressDto,
             passwordHash: passwordHash
         )

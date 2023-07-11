@@ -14,6 +14,8 @@ internal enum L10n {
   internal static let accountManagementButton = L10n.tr("Localizable", "account_management_button", fallback: "Account management")
   /// Add
   internal static let addFinancesButton = L10n.tr("Localizable", "add_finances_button", fallback: "Add")
+  /// Add to cart
+  internal static let addToCartButton = L10n.tr("Localizable", "add_to_cart_button", fallback: "Add to cart")
   /// Address
   internal static let addressLabel = L10n.tr("Localizable", "address_label", fallback: "Address")
   /// The address must be entered in the format: country, city, street, house, apartment

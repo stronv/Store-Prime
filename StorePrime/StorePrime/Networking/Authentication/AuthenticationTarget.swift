@@ -15,8 +15,7 @@ enum AuthenticationTarget {
 
 extension AuthenticationTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: "https://ccef-85-249-24-67.ngrok-free.app")  else { fatalError("Could not get URL") }
-        return url
+        return APIBaseURL.defaultURL.url
     }
     
     var path: String {
@@ -55,7 +54,7 @@ extension AuthenticationTarget: TargetType {
         case .authenticate:
             return ["Content-Type": "application/x-www-form-urlencoded"]
         case .authRevoke(let token):
-            return ["Authorization": token]
+            return ["Authorization": "Bearer \(token)"]
         }
     }
 }

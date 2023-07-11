@@ -17,15 +17,19 @@ class DescriptionView: UIView {
     // MARK: - UI
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Чайник заварочный стеклянный 900 мл"
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
         label.numberOfLines = 0
         return label
     }()
     
-    private let sellerName: UILabel = {
+    private let sellerImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "profilePicture")
+        return imageView
+    }()
+    
+    private let sellerNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Мир чая"
         label.font = UIFont(name: Fonts.exo2Bold, size: 16)
         return label
     }()
@@ -41,7 +45,6 @@ class DescriptionView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
-        label.text = "Заварочный чайник из жаропрочного стекла - то, в чем нуждается ваша кухня! Большой стеклянный чайник идеально подходит для распития..."
         return label
     }()
     // MARK: - Lifecycle
@@ -66,11 +69,16 @@ class DescriptionView: UIView {
             make.trailing.equalToSuperview().inset(17)
         }
         
-        addSubview(sellerName)
-        sellerName.snp.makeConstraints { make in
+        addSubview(sellerImage)
+        sellerImage.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(17)
+        }
+        
+        addSubview(sellerNameLabel)
+        sellerNameLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(25)
-            make.leading.equalToSuperview().offset(70)
-            
+            make.leading.equalTo(sellerImage.snp.leading).offset(53)
         }
         
         addSubview(priceLabel)
@@ -87,5 +95,15 @@ class DescriptionView: UIView {
         }
         
         backgroundColor = .white
+    }
+}
+
+// MARK: - Public Methods
+extension DescriptionView {
+    func configureDescription(product: Product) {
+        titleLabel.text = product.title
+        descriptionLabel.text = product.description
+        priceLabel.text = "\(product.price) Руб"
+        sellerNameLabel.text = product.sellerName
     }
 }

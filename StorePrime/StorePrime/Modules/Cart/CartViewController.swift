@@ -9,13 +9,13 @@ import UIKit
 import SnapKit
 
 protocol CartViewControllerProtocol: AnyObject {
-    
+    func reloadData()
+    func configureAmonut(amount: Double)
 }
 
 class CartViewController: UIViewController, CartViewControllerProtocol {
     private let amountLabel: UILabel = {
         let label = UILabel()
-        label.text = "2000Р"
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
         return label
     }()
@@ -42,6 +42,7 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(amountLabel)
+        output.viewDidLoadEvent()
         
         amountLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -67,14 +68,14 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    var output: CartPresenterProtocol!
+    var output: CartPresenter!
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        return output.prdouctsInCart.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,7 +85,9 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         else {
             fatalError("Couldn't register cell")
         }
-        cell.backgroundColor = .clear
+        
+        let product = output.prdouctsInCart[indexPath.row]
+        cell.configureCellForCart(cartProduct: product)
         return cell
     }
     
@@ -116,5 +119,16 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         minimumLineSpacingForSectionAt section: Int
     ) -> CGFloat {
         return 10
+    }
+}
+
+// MARK: - Public Methods
+extension CartViewController {
+    func reloadData() {
+        collectionView.reloadData()
+    }
+    
+    func configureAmonut(amount: Double) {
+        amountLabel.text = "\(amount) Р"
     }
 }

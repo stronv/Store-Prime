@@ -36,8 +36,7 @@ class AuthenticationManager: AuthenticationManagerProtocol {
     }
     
     func authRevoke(token: String, completion: @escaping (Result<Void, GenericError>) -> Void) {
-        let bearerToken = "Bearer \(token)"
-        provider.request(.authRevoke(token: bearerToken)) { result in
+        provider.request(.authRevoke(token: token)) { result in
             switch result {
             case let .success(response):
                 if let error = try? JSONDecoder().decode(GenericError.self, from: response.data) {

@@ -34,6 +34,6 @@ struct ResponceCustomer: Codable {
     let email, phoneNumber: String
     let cardBalance: Int?
     let name, surname, gender: String
-    let birthdayDate: [Int]
+    let birthdayDate: String
     let addressDto: AddressDto
 }
