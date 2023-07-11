@@ -14,6 +14,8 @@ protocol CartViewControllerProtocol: AnyObject {
 }
 
 class CartViewController: UIViewController, CartViewControllerProtocol {
+    
+    // MARK: - UI
     private let amountLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
@@ -35,10 +37,18 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
         button.setTitle(L10n.buyButton, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(buyButtonAction), for: .touchUpInside)
         button.backgroundColor = UIColor.customBlack
         return button
     }()
     
+    private let refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        return refreshControl
+    }()
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(amountLabel)
@@ -67,6 +77,7 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.refreshControl = refreshControl
     }
     var output: CartPresenter!
 }
@@ -130,5 +141,18 @@ extension CartViewController {
     
     func configureAmonut(amount: Double) {
         amountLabel.text = "\(amount) Р"
+    }
+}
+
+// MARK: - Objc Methods
+extension CartViewController {
+    @objc func buyButtonAction() {
+        output.createOrder()
+    }
+    
+    @objc func refreshData() {
+        refreshControl.beginRefreshing()
+        collectionView.reloadData()
+        refreshControl.endRefreshing()
     }
 }

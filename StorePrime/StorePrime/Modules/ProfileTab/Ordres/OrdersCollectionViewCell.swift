@@ -106,3 +106,9 @@ class OrdersCollectionViewCell: UICollectionViewCell {
         }
     }
 }
+
+extension OrdersCollectionViewCell {
+    func cnfigure(order: Order) {
+        orderNumberLabel.text = order.product.title
+    }
+}

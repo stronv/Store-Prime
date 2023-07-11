@@ -28,6 +28,7 @@ class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        output.viewDidLoadEvent()
         configure()
     }
     

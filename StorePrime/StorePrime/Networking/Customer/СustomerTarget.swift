@@ -11,6 +11,7 @@ import Moya
 enum СustomerTarget {
     case createCustomer(customer: Сustomer)
     case updateCustomer(customer: Сustomer, token: String)
+    case addBonuses(amount: Int, token: String)
 }
 
 extension СustomerTarget: TargetType {
@@ -24,6 +25,8 @@ extension СustomerTarget: TargetType {
             return "customer"
         case .updateCustomer:
             return "customer"
+        case .addBonuses:
+            return "customer"
         }
     }
     
@@ -33,6 +36,8 @@ extension СustomerTarget: TargetType {
             return .post
         case .updateCustomer:
             return .put
+        case .addBonuses:
+            return .patch
         }
     }
     
@@ -42,6 +47,8 @@ extension СustomerTarget: TargetType {
             return .requestJSONEncodable(customer)
         case .updateCustomer(let customer, _):
             return .requestJSONEncodable(customer)
+        case .addBonuses(let amount, _):
+            return .requestJSONEncodable(amount)
         }
     }
     
@@ -51,7 +58,8 @@ extension СustomerTarget: TargetType {
             return ["Content-Type": "application/json"]
         case .updateCustomer(_, let token):
             return ["Content-Type": "application/json", "Authorization": token]
-
+        case .addBonuses(_, let token):
+            return ["Content-Type": "application/json", "Authorization": token]
         }
     }
 }

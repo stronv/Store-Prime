@@ -56,6 +56,7 @@ class AddBonusesViewController: UIViewController, AddBonusesViewControllerProtoc
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor.customBlack
+        button.addTarget(self, action: #selector(addBonusesButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -115,4 +116,11 @@ extension AddBonusesViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func addBonusesButtonAction() {
+        if let bonusesText = bonusesTextField.text, let bonuses = Int(bonusesText) {
+            output.addBonuses(amount: bonuses)
+        } else {
+            showAlert(alertTitle: "Error", alertMessage: "Bonuces can't be added!")
+        }
+    }
 }

@@ -24,6 +24,8 @@
 		7C745AE92A597AA7009CB73A /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFB96C2A5700FF000ECCB9 /* Strings+Generated.swift */; };
 		7C754B822A545930009FE0C5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C754B812A545930009FE0C5 /* ProfileViewController.swift */; };
 		7C754B842A54596E009FE0C5 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C754B832A54596E009FE0C5 /* ProfilePresenter.swift */; };
+		7C78F7BE2A5DF4AB00B3D4F2 /* OrderTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C78F7BD2A5DF4AB00B3D4F2 /* OrderTarget.swift */; };
+		7C78F7C02A5DF8A200B3D4F2 /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C78F7BF2A5DF8A200B3D4F2 /* OrderManager.swift */; };
 		7C7966CD2A5484D700CEA8E4 /* СustomerTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966CC2A5484D700CEA8E4 /* СustomerTarget.swift */; };
 		7C7966D62A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */; };
 		7C7966D72A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */; };
@@ -150,6 +152,8 @@
 		7C6EEE7E2A583A2900C5DF00 /* AddBonucesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBonucesViewController.swift; sourceTree = "<group>"; };
 		7C754B812A545930009FE0C5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7C754B832A54596E009FE0C5 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		7C78F7BD2A5DF4AB00B3D4F2 /* OrderTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTarget.swift; sourceTree = "<group>"; };
+		7C78F7BF2A5DF8A200B3D4F2 /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
 		7C7966CC2A5484D700CEA8E4 /* СustomerTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СustomerTarget.swift"; sourceTree = "<group>"; };
 		7C7966D52A55651600CEA8E4 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
 		7C7D34F52A54027000A08B02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +298,15 @@
 			path = Seller;
 			sourceTree = "<group>";
 		};
+		7C51DF1C2A5DD7DE00B93F8F /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				7C78F7BD2A5DF4AB00B3D4F2 /* OrderTarget.swift */,
+				7C78F7BF2A5DF8A200B3D4F2 /* OrderManager.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		7C6EEE7B2A58365900C5DF00 /* Parts */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +436,7 @@
 		7CC7F3F72A5483EC00A7BD31 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7C51DF1C2A5DD7DE00B93F8F /* Order */,
 				7C51DF132A5DB5B800B93F8F /* Seller */,
 				7C51DF062A5D859A00B93F8F /* Cart */,
 				7CBD2F712A5CA9400012754C /* Photo */,
@@ -892,6 +906,7 @@
 				7CBD2F702A5CA90B0012754C /* Photo.swift in Sources */,
 				7CE890AD2A592B77002D6652 /* OrdersViewController.swift in Sources */,
 				7C754B822A545930009FE0C5 /* ProfileViewController.swift in Sources */,
+				7C78F7BE2A5DF4AB00B3D4F2 /* OrderTarget.swift in Sources */,
 				7C6EEE7F2A583A2900C5DF00 /* AddBonucesViewController.swift in Sources */,
 				7CDD53D82A53640C00D21885 /* MainPagePresenter.swift in Sources */,
 				7CF87D9F2A52EA5E00AC979B /* UIColor.swift in Sources */,
@@ -911,6 +926,7 @@
 				7CE890A72A589A5C002D6652 /* ChangeProfilePresenter.swift in Sources */,
 				7C7966D62A55651600CEA8E4 /* ProfileTabCoordinator.swift in Sources */,
 				7CF87D972A52130500AC979B /* UITextField.swift in Sources */,
+				7C78F7C02A5DF8A200B3D4F2 /* OrderManager.swift in Sources */,
 				7C7966CD2A5484D700CEA8E4 /* СustomerTarget.swift in Sources */,
 				7CDD53DF2A53676E00D21885 /* SearchPresenter.swift in Sources */,
 				7C8033C02A588DE500218AD9 /* BonusesPresenter.swift in Sources */,
