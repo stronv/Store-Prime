@@ -16,7 +16,7 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = UIColor(named: "backroundColor")
         return scrollView
     }()
     
@@ -40,7 +40,6 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
         descriptionView.layer.cornerRadius = 36
         descriptionView.layer.borderColor = UIColor.boarderColor.cgColor
         descriptionView.layer.borderWidth = 1
-        descriptionView.backgroundColor = .white
         descriptionView.layer.shadowOpacity = 0.1
         descriptionView.layer.shadowOffset = CGSize(width: 0, height: 0)
         return descriptionView
@@ -51,7 +50,6 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
         parametersView.layer.cornerRadius = 36
         parametersView.layer.borderColor = UIColor.boarderColor.cgColor
         parametersView.layer.borderWidth = 1
-        parametersView.backgroundColor = .white
         parametersView.layer.shadowOpacity = 0.1
         parametersView.layer.shadowOffset = CGSize(width: 0, height: 0)
         return parametersView
@@ -64,7 +62,7 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(addToCartButtonAction), for: .touchUpInside)
-        button.backgroundColor = UIColor.customBlack
+        button.backgroundColor = UIColor(named: "buttonColor")
         return button
     }()
     
@@ -78,7 +76,7 @@ class ProductDetailViewController: UIViewController, ProductDetailViewController
     
     // MARK: - Private methods
     private func configure() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundColor")
         
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in

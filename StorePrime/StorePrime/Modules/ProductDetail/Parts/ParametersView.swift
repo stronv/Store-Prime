@@ -14,6 +14,7 @@ class ParametersView: UIView {
         let label = UILabel()
         label.text = L10n.parametersLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         label.numberOfLines = 0
         return label
     }()
@@ -22,6 +23,7 @@ class ParametersView: UIView {
         let label = UILabel()
         label.text = L10n.categoryLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -29,6 +31,7 @@ class ParametersView: UIView {
         let label = UILabel()
         label.text = "Посуда"
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         label.numberOfLines = 0
         return label
     }()
@@ -37,6 +40,7 @@ class ParametersView: UIView {
         let label = UILabel()
         label.text = L10n.addressLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -45,6 +49,7 @@ class ParametersView: UIView {
         label.text = "Россия, Москва"
         label.numberOfLines = 0
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -62,6 +67,7 @@ class ParametersView: UIView {
     }
     
     private func configure() {
+        backgroundColor = UIColor(named: "backgroundColor")
         addSubview(parametersLabel)
         parametersLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(25)

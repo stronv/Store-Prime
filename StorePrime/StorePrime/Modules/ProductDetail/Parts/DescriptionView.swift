@@ -18,6 +18,7 @@ class DescriptionView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        label.textColor = UIColor(named: "fontColor")
         label.numberOfLines = 0
         return label
     }()
@@ -31,6 +32,7 @@ class DescriptionView: UIView {
     private let sellerNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.exo2Bold, size: 16)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -38,6 +40,7 @@ class DescriptionView: UIView {
         let label = UILabel()
         label.text = "900 Руб"
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -45,6 +48,7 @@ class DescriptionView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     // MARK: - Lifecycle
@@ -63,6 +67,7 @@ class DescriptionView: UIView {
     // MARK: - Private metohds
     private func configure() {
         addSubview(titleLabel)
+        backgroundColor = UIColor(named: "backgroundColor")
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(25)
             make.leading.equalToSuperview().offset(17)
