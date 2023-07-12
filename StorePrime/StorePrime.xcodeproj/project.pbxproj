@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41159E0B550347552852DC83 /* Pods_StorePrime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADF6B988E6D8DA4A6EF91100 /* Pods_StorePrime.framework */; };
+		7C429E742A5E41EB0035DBCB /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C429E732A5E41EB0035DBCB /* AuthState.swift */; };
 		7C51DEFD2A5D2E3400B93F8F /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51DEFC2A5D2E3400B93F8F /* DescriptionView.swift */; };
 		7C51DF012A5D3C0A00B93F8F /* ParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51DF002A5D3C0A00B93F8F /* ParametersView.swift */; };
 		7C51DF082A5D85A300B93F8F /* CartTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C51DF072A5D85A300B93F8F /* CartTarget.swift */; };
@@ -79,7 +80,6 @@
 		7CE890B72A5973BA002D6652 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE890B62A5973BA002D6652 /* Validators.swift */; };
 		7CF87D282A51D33D00AC979B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D272A51D33D00AC979B /* AppDelegate.swift */; };
 		7CF87D2A2A51D33D00AC979B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D292A51D33D00AC979B /* SceneDelegate.swift */; };
-		7CF87D322A51D33D00AC979B /* StorePrime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D302A51D33D00AC979B /* StorePrime.xcdatamodeld */; };
 		7CF87D342A51D33D00AC979B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF87D332A51D33D00AC979B /* Assets.xcassets */; };
 		7CF87D422A51D33D00AC979B /* StorePrimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D412A51D33D00AC979B /* StorePrimeTests.swift */; };
 		7CF87D4C2A51D33D00AC979B /* StorePrimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF87D4B2A51D33D00AC979B /* StorePrimeUITests.swift */; };
@@ -139,6 +139,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C429E732A5E41EB0035DBCB /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		7C51DEFC2A5D2E3400B93F8F /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		7C51DF002A5D3C0A00B93F8F /* ParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersView.swift; sourceTree = "<group>"; };
 		7C51DF072A5D85A300B93F8F /* CartTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTarget.swift; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		7CF87D242A51D33D00AC979B /* StorePrime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorePrime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF87D272A51D33D00AC979B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CF87D292A51D33D00AC979B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CF87D312A51D33D00AC979B /* StorePrime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorePrime.xcdatamodel; sourceTree = "<group>"; };
 		7CF87D332A51D33D00AC979B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CF87D382A51D33D00AC979B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CF87D3D2A51D33D00AC979B /* StorePrimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorePrimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +271,14 @@
 				7CFFB96B2A5700FF000ECCB9 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		7C429E722A5E41DC0035DBCB /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7C429E732A5E41EB0035DBCB /* AuthState.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		7C51DEFB2A5D2E2500B93F8F /* Parts */ = {
@@ -559,7 +567,6 @@
 				7CF87D272A51D33D00AC979B /* AppDelegate.swift */,
 				7CF87D292A51D33D00AC979B /* SceneDelegate.swift */,
 				7CF87D382A51D33D00AC979B /* Info.plist */,
-				7CF87D302A51D33D00AC979B /* StorePrime.xcdatamodeld */,
 				7CF87D722A51D56700AC979B /* AppCoordinator.swift */,
 				7CDD53CF2A53593E00D21885 /* MainTapBarCoordinator.swift */,
 				7CFFB9692A570025000ECCB9 /* LaunchScreen.storyboard */,
@@ -607,6 +614,7 @@
 		7CF87D6D2A51D52300AC979B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7C429E722A5E41DC0035DBCB /* Enums */,
 				7CF87D6E2A51D53000AC979B /* Coordinator.swift */,
 				7CE890B62A5973BA002D6652 /* Validators.swift */,
 				7CBD2F6D2A5CA15F0012754C /* UIImageView.swift */,
@@ -890,7 +898,6 @@
 				7CC7F3F62A5483DE00A7BD31 /* Customer.swift in Sources */,
 				7C6EEE7D2A58366300C5DF00 /* FinanceView.swift in Sources */,
 				7C51DF082A5D85A300B93F8F /* CartTarget.swift in Sources */,
-				7CF87D322A51D33D00AC979B /* StorePrime.xcdatamodeld in Sources */,
 				7CBA01072A53698800FFC21F /* CartPresenter.swift in Sources */,
 				7CE890A82A589A5C002D6652 /* ChangeProfileViewController.swift in Sources */,
 				7CF87D6F2A51D53000AC979B /* Coordinator.swift in Sources */,
@@ -940,6 +947,7 @@
 				7CF87D972A52130500AC979B /* UITextField.swift in Sources */,
 				7C78F7C02A5DF8A200B3D4F2 /* OrderManager.swift in Sources */,
 				7C7966CD2A5484D700CEA8E4 /* СustomerTarget.swift in Sources */,
+				7C429E742A5E41EB0035DBCB /* AuthState.swift in Sources */,
 				7CDD53DF2A53676E00D21885 /* SearchPresenter.swift in Sources */,
 				7C8033C02A588DE500218AD9 /* BonusesPresenter.swift in Sources */,
 				7C51DF1B2A5DD73E00B93F8F /* Order.swift in Sources */,
@@ -1304,19 +1312,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7CF87D302A51D33D00AC979B /* StorePrime.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7CF87D312A51D33D00AC979B /* StorePrime.xcdatamodel */,
-			);
-			currentVersion = 7CF87D312A51D33D00AC979B /* StorePrime.xcdatamodel */;
-			path = StorePrime.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7CF87D1C2A51D33D00AC979B /* Project object */;
 }

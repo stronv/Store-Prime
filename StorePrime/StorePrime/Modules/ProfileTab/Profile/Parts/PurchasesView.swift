@@ -21,18 +21,19 @@ class PurchasesView: UIView {
         let label = UILabel()
         label.text = L10n.purchasesLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
     private let ordersButton: UIButton = {
         let button = UIButton()
         button.setTitle(L10n.ordersButton, for: .normal)
-        button.setTitleColor(.customBlack, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         button.layer.cornerRadius = 11
         button.contentHorizontalAlignment = .left
         button.layer.borderColor = UIColor.boarderColor.cgColor
         button.layer.borderWidth = 1
+        button.titleLabel?.textColor = UIColor(named: "fontColor")
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 0)
         button.addTarget(self, action: #selector(ordersButtonAction), for: .touchUpInside)
         return button
@@ -67,7 +68,7 @@ class PurchasesView: UIView {
             make.height.equalTo(44)
         }
         
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor(named: "backgroundColor")
         layer.cornerRadius = 37
         layer.borderColor = UIColor.boarderColor.cgColor
         layer.borderWidth = 1

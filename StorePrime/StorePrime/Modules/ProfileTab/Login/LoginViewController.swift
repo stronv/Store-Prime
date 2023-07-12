@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor(named: "backroundColor")
         return scrollView
     }()
     
@@ -31,12 +32,14 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
         let label = UILabel()
         label.text = L10n.signInLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
     private let emailLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.emailLabel
+        label.textColor = UIColor(named: "fontColor")
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
@@ -44,6 +47,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     private let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = L10n.emailTextfield
+        textField.textColor = UIColor(named: "fontColor")
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
@@ -51,6 +55,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.passwordLabel
+        label.textColor = UIColor(named: "fontColor")
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
         return label
     }()
@@ -58,6 +63,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     private let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = L10n.passwordTextfield
+        textField.textColor = UIColor(named: "fontColor")
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return textField
     }()
@@ -69,13 +75,14 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(signInButtonAction), for: .touchUpInside)
-        button.backgroundColor = UIColor.customBlack
+        button.backgroundColor = UIColor(named: "buttonColor")
         return button
     }()
     
     private let notRegisteredYetLabel: UILabel = {
         let label = UILabel()
         label.text = L10n.notRegisteredYetLabel
+        label.textColor = UIColor(named: "fontColor")
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         return label
     }()
@@ -101,6 +108,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
         let label = UILabel()
         label.text = L10n.orLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -162,6 +170,7 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol {
     }
     
     private func configure() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

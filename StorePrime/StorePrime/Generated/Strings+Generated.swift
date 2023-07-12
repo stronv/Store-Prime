@@ -73,6 +73,8 @@ internal enum L10n {
   internal static let nameLabel = L10n.tr("Localizable", "name_label", fallback: "Name")
   /// Enter a name
   internal static let nameTextfield = L10n.tr("Localizable", "name_textfield", fallback: "Enter a name")
+  /// Need to authorize
+  internal static let needToAuthorizeLabel = L10n.tr("Localizable", "need_to_authorize_label", fallback: "Need to authorize")
   /// Not registered yet?
   internal static let notRegisteredYetLabel = L10n.tr("Localizable", "not_registered_yet_label", fallback: "Not registered yet?")
   /// The phone must consist of 11 digits

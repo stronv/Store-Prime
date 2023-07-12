@@ -16,7 +16,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = UIColor(named: "backroundColor")
         return scrollView
     }()
     
@@ -32,6 +32,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.signUpLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -39,6 +40,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.nameLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -47,6 +49,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         textField.placeholder = L10n.nameTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         textField.isUserInteractionEnabled = true
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -54,6 +57,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.surnameLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -61,6 +65,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let textField = UITextField()
         textField.placeholder = L10n.surnameTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -68,6 +73,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.dateOfBirthLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -75,6 +81,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let textField = UITextField()
         textField.placeholder = L10n.dateOfBirthTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -82,6 +89,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.genderLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -103,6 +111,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.addressLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -110,6 +119,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let textField = UITextField()
         textField.placeholder = L10n.addressTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -117,6 +127,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.phoneNumberLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -124,6 +135,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let textField = UITextField()
         textField.placeholder = L10n.phoneNumberTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -131,6 +143,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.emailLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -138,6 +151,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let textField = UITextField()
         textField.placeholder = L10n.emailTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -145,6 +159,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.passwordLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -152,6 +167,8 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let textField = UITextField()
         textField.placeholder = L10n.passwordTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -162,7 +179,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(signUpButtonAction), for: .touchUpInside)
-        button.backgroundColor = UIColor.customBlack
+        button.backgroundColor = UIColor(named: "buttonColor")
         return button
     }()
     
@@ -171,6 +188,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         label.text = L10n.alreadyRegisterLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         label.setContentHuggingPriority(UILayoutPriority(252), for: .horizontal)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -196,6 +214,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
         let label = UILabel()
         label.text = L10n.orLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -262,6 +281,7 @@ class RegistrationViewController: UIViewController, RegistrationViewControllerPr
     }
     
     private func configure() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

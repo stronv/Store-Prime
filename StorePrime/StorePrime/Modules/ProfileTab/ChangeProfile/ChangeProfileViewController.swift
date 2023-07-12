@@ -17,6 +17,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .white
+        scrollView.backgroundColor = UIColor(named: "backroundColor")
         return scrollView
     }()
     
@@ -32,6 +33,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.nameLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -40,6 +42,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         textField.placeholder = L10n.nameTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         textField.isUserInteractionEnabled = true
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -47,6 +50,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.surnameLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -54,6 +58,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let textField = UITextField()
         textField.placeholder = L10n.surnameTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -61,6 +66,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.dateOfBirthLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -68,6 +74,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let textField = UITextField()
         textField.placeholder = L10n.dateOfBirthTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -75,6 +82,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.genderLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -96,6 +104,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.addressLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -103,6 +112,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let textField = UITextField()
         textField.placeholder = L10n.addressTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -110,6 +120,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.phoneNumberLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -117,6 +128,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let textField = UITextField()
         textField.placeholder = L10n.phoneNumberTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -124,6 +136,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.emailLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -131,6 +144,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let textField = UITextField()
         textField.placeholder = L10n.emailTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -138,6 +152,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let label = UILabel()
         label.text = L10n.passwordLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -145,6 +160,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         let textField = UITextField()
         textField.placeholder = L10n.passwordTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -154,7 +170,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
         button.setTitle(L10n.updateButton, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.customBlack
+        button.backgroundColor = UIColor(named: "buttonColor")
         button.addTarget(self, action: #selector(updateButtonAction), for: .touchUpInside)
 
         return button
@@ -205,6 +221,7 @@ class ChangeProfileViewController: UIViewController, ChangeProfileViewController
     }
     
     private func configure() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

@@ -43,6 +43,7 @@
 "maybe_you_will_like_it_label" = "Maybe you'll like it";
 "parameters_label" = "Parameters";
 "category_label" = "Category";
+"need_to_authorize_label" = "Need to authorize";
 
 "name_textfield" = "Enter a name";
 "surname_textfield" = "Enter a surname";

@@ -20,7 +20,7 @@ class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(OrdersCollectionViewCell.self, forCellWithReuseIdentifier: OrdersCollectionViewCell.identifier)
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = UIColor(named: "backgroundColor")
         return collectionView
     }()
     
@@ -37,6 +37,7 @@ class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
     
     // MARK: - Private methods
     private func configure() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -85,7 +85,7 @@ class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
     
     // MARK: - Private methods
     private func configure() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundColor")
         userDataStackView.addArrangedSubview(nameLabel)
         userDataStackView.addArrangedSubview(surnameLabel)
         
@@ -151,5 +151,13 @@ extension ProfileViewController {
     
     @objc func accountManagementButtonAction() {
         output.showChangeProfile()
+    }
+}
+
+// MARK: - Public methods
+extension ProfileViewController {
+    func configureProfileView(customer: ResponceCustomer) {
+        nameLabel.text = "\(customer.name) \(customer.surname)"
+        financeView.configureFinanceView(customer: customer)
     }
 }

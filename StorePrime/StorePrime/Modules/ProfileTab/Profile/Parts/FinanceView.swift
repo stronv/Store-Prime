@@ -81,10 +81,15 @@ class FinanceView: UIView {
     }
 }
 
+// MARK: - Objc functions
 extension FinanceView {
-    // MARK: - Objc functions
     @objc func addButtonAction() {
         delegate?.addButtonDelegate()
     }
 }
-
+// MARK: - Public Methods
+extension FinanceView {
+    func configureFinanceView(customer: ResponceCustomer) {
+        bonusesLabel.text = "\(customer.cardBalance) \(L10n.bonusesLabel)"
+    }
+}

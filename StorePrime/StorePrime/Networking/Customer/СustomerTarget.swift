@@ -12,6 +12,7 @@ enum СustomerTarget {
     case createCustomer(customer: Сustomer)
     case updateCustomer(customer: Сustomer, token: String)
     case addBonuses(amount: Int, token: String)
+    case getCustomer(token: String)
 }
 
 extension СustomerTarget: TargetType {
@@ -27,6 +28,8 @@ extension СustomerTarget: TargetType {
             return "customer"
         case .addBonuses:
             return "customer"
+        case .getCustomer:
+            return "customer"
         }
     }
     
@@ -38,6 +41,8 @@ extension СustomerTarget: TargetType {
             return .put
         case .addBonuses:
             return .patch
+        case .getCustomer:
+            return .get
         }
     }
     
@@ -49,6 +54,8 @@ extension СustomerTarget: TargetType {
             return .requestJSONEncodable(customer)
         case .addBonuses(let amount, _):
             return .requestJSONEncodable(amount)
+        case .getCustomer:
+            return .requestPlain
         }
     }
     
@@ -57,8 +64,10 @@ extension СustomerTarget: TargetType {
         case .createCustomer:
             return ["Content-Type": "application/json"]
         case .updateCustomer(_, let token):
-            return ["Content-Type": "application/json", "Authorization": token]
+            return ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         case .addBonuses(_, let token):
+            return ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
+        case .getCustomer(let token):
             return ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         }
     }

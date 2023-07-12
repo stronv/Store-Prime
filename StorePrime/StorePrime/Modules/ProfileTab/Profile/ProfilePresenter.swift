@@ -19,12 +19,18 @@ class ProfilePresenter: ProfilePresenterProtocol {
     private let moduleOutput: ProfileTabCoordinatorProtocol
     private weak var view: ProfileViewControllerProtocol?
     private let authManager = AuthenticationManager()
+    private let customerManager = CustomerManager()
     
     init(_ moduleOutput: ProfileTabCoordinatorProtocol, view: ProfileViewControllerProtocol) {
         self.moduleOutput = moduleOutput
         self.view = view
     }
     
+    var customer: ResponceCustomer?
+}
+
+// MARK: - Public Methods
+extension ProfilePresenter {
     func showBonucesView() {
         moduleOutput.toBonuces()
     }
@@ -43,7 +49,6 @@ class ProfilePresenter: ProfilePresenterProtocol {
     
     func signOut() {
         if let token = UserDefaults.standard.string(forKey: "refreshToken") {
-            print(token)
             authManager.authRevoke(token: token) { result in
                 switch result {
                 case .success:
@@ -51,6 +56,20 @@ class ProfilePresenter: ProfilePresenterProtocol {
                     self.showRegistration()
                 case .failure:
                     print("Error Revoke")
+                }
+            }
+        }
+    }
+    
+    func getCustomer() {
+        if let token = UserDefaults.standard.string(forKey: "refreshToken") {
+            customerManager.getCustomer(token: token) { result in
+                switch result {
+                case .success(let customer):
+                    self.customer = customer
+                    print("Customer get successfully")
+                case.failure(let error):
+                    print(error.localizedDescription)
                 }
             }
         }

@@ -38,6 +38,7 @@ class HeaderCollectionView: UICollectionReusableView {
         let label = UILabel()
         label.text = L10n.haveTimeToBuyLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        label.textColor = UIColor(named: "fontColor")
         label.textColor = .white
         return label
     }()
@@ -45,6 +46,7 @@ class HeaderCollectionView: UICollectionReusableView {
     private let productTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.exo2Bold, size: 15)
+        label.textColor = UIColor(named: "fontColor")
         label.textColor = .white
         return label
     }()
@@ -52,6 +54,7 @@ class HeaderCollectionView: UICollectionReusableView {
     private let productPriceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        label.textColor = UIColor(named: "fontColor")
         label.textColor = .white
         return label
     }()

@@ -17,6 +17,7 @@ class OrdersCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Заказ"
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -24,6 +25,7 @@ class OrdersCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Q8980E8RR9ER"
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -31,13 +33,16 @@ class OrdersCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "1537Р"
         label.font = UIFont(name: Fonts.exo2Bold, size: 24)
-        label.setContentHuggingPriority(UILayoutPriority(251), for: .horizontal)
+        label.setContentHuggingPriority(UILayoutPriority(251), for:
+                .horizontal)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
     private let orderStatusLabel: UILabel = {
         let label = UILabel()
         label.text = "Готов к получению"
+        label.textColor = UIColor(named: "fontColor")
         label.layer.cornerRadius = 24
         label.layer.masksToBounds = true
         label.textAlignment = .center
@@ -75,7 +80,7 @@ class OrdersCollectionViewCell: UICollectionViewCell {
     }
     
     private func configure() {
-        
+        contentView.backgroundColor = UIColor(named: "backgroundColor")
         mainStackView.addArrangedSubview(orderLabel)
         secondStackView.addArrangedSubview(orderNumberLabel)
         secondStackView.addArrangedSubview(orderAmountLabel)

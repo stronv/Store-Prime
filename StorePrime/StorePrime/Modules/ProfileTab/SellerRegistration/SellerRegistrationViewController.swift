@@ -19,6 +19,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     // MARK: - UI
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor(named: "backroundColor")
         return scrollView
     }()
     
@@ -34,6 +35,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.signUpLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 40)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -41,6 +43,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.titleLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -48,6 +51,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let textField = UITextField()
         textField.placeholder = L10n.titleTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         textField.isUserInteractionEnabled = true
         return textField
     }()
@@ -56,6 +60,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.innLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -63,6 +68,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let textField = UITextField()
         textField.placeholder = L10n.innTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         textField.isUserInteractionEnabled = true
         return textField
     }()
@@ -71,6 +77,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.addressLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -78,6 +85,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let textField = UITextField()
         textField.placeholder = L10n.addressTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -85,6 +93,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.emailLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -92,6 +101,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let textField = UITextField()
         textField.placeholder = L10n.emailTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -99,6 +109,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.passwordLabel
         label.font = UIFont(name: Fonts.exo2Bold, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -106,6 +117,8 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let textField = UITextField()
         textField.placeholder = L10n.passwordTextfield
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        textField.textColor = UIColor(named: "fontColor")
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -115,7 +128,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         button.setTitle(L10n.signUpButton, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.customBlack
+        button.backgroundColor = UIColor(named: "buttonColor")
         return button
     }()
     
@@ -123,6 +136,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.alreadyRegisterLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -147,6 +161,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
         let label = UILabel()
         label.text = L10n.orLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -211,6 +226,7 @@ class SellerRegistrationViewController: UIViewController, SellerRegistrationView
     }
     
     private func configure() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

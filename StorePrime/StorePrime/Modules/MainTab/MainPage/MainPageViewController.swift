@@ -33,7 +33,7 @@ class MainPageViewController: UIViewController, MainPageViewControllerProtocol {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: HeaderCollectionView.identifier
         )
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = UIColor(named: "backgroundColor")
         return collectionView
     }()
     // MARK: - Lifecycle
@@ -48,7 +48,7 @@ class MainPageViewController: UIViewController, MainPageViewControllerProtocol {
     private func configure() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(searchView)
         searchView.snp.makeConstraints { make in
             make.top.equalToSuperview()

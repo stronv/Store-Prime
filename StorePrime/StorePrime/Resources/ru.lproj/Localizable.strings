@@ -43,6 +43,7 @@
 "maybe_you_will_like_it_label" = "Возможно, вам понравится";
 "parameters_label" = "Параметры";
 "category_label" = "Категория";
+"need_to_authorize_label" = "Нужно авторизоваться";
 
 "name_textfield" = "Введите имя";
 "surname_textfield" = "Введите фамилию";

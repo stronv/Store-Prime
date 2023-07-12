@@ -75,4 +75,12 @@ class CartPresenter: CartPresenterProtocol {
             }
         }
     }
+    
+    func checkUserState() {
+        if UserDefaults.standard.string(forKey: "refreshToken") != nil {
+            view?.updateViewState(state: .authorized)
+        } else {
+            view?.updateViewState(state: .unauthorized)
+        }
+    }
 }

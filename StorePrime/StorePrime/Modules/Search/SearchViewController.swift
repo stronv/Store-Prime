@@ -24,7 +24,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10.0, left: 1.0, bottom: 1.0, right: 1.0)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemGray
+        collectionView.backgroundColor = UIColor(named: "backgroundColor")
         collectionView.register(
             CategoryCollectionViewCell.self,
             forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier
@@ -44,7 +44,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     private func configure() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(searchView)
         searchView.snp.makeConstraints { make in
             make.top.equalToSuperview()

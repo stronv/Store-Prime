@@ -11,6 +11,7 @@ import SnapKit
 protocol CartViewControllerProtocol: AnyObject {
     func reloadData()
     func configureAmonut(amount: Double)
+    func updateViewState(state: AuthState)
 }
 
 class CartViewController: UIViewController, CartViewControllerProtocol {
@@ -27,7 +28,7 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = UIColor(named: "backgroundColor")
         return collectionView
     }()
     
@@ -38,7 +39,7 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(buyButtonAction), for: .touchUpInside)
-        button.backgroundColor = UIColor.customBlack
+        button.backgroundColor = UIColor(named: "buttonColor")
         return button
     }()
     
@@ -48,10 +49,19 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
         return refreshControl
     }()
     
+    private let needToAuthorizeLabel: UILabel = {
+        let label = UILabel()
+        label.text = L10n.needToAuthorizeLabel
+        label.font = UIFont(name: Fonts.exo2Bold, size: 24)
+        label.textColor = UIColor(named: "fontColor")
+        return label
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(amountLabel)
+        view.backgroundColor = UIColor(named: "backgroundColor")
         output.viewDidLoadEvent()
         
         amountLabel.snp.makeConstraints { make in
@@ -61,7 +71,7 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
         
         view.addSubview(buyButton)
         buyButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(10)
             make.leading.equalToSuperview().offset(25)
             make.trailing.equalToSuperview().inset(25)
             make.height.equalTo(50)
@@ -73,6 +83,12 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalTo(buyButton.snp.bottom).inset(60)
+        }
+        
+        view.addSubview(needToAuthorizeLabel)
+        needToAuthorizeLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
         
         collectionView.delegate = self
@@ -143,6 +159,21 @@ extension CartViewController {
     
     func configureAmonut(amount: Double) {
         amountLabel.text = "\(amount) Р"
+    }
+    
+    func updateViewState(state: AuthState) {
+        switch state {
+        case .authorized:
+            buyButton.isHidden = false
+            collectionView.isHidden = false
+            amountLabel.isHidden = false
+            needToAuthorizeLabel.isHidden = true
+        case .unauthorized:
+            buyButton.isHidden = true
+            collectionView.isHidden = true
+            amountLabel.isHidden = true
+            needToAuthorizeLabel.isHidden = false
+        }
     }
 }
 

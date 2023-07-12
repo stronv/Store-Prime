@@ -17,6 +17,7 @@ class AddBonusesViewController: UIViewController, AddBonusesViewControllerProtoc
     private let paymentAmountLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Fonts.exo2Bold, size: 32)
+        label.textColor = UIColor(named: "fontColor")
         label.text = L10n.paymentAmountLabel
         return label
     }()
@@ -39,6 +40,7 @@ class AddBonusesViewController: UIViewController, AddBonusesViewControllerProtoc
         textField.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
+        textField.textColor = UIColor(named: "fontColor")
         return textField
     }()
     
@@ -46,6 +48,7 @@ class AddBonusesViewController: UIViewController, AddBonusesViewControllerProtoc
         let label = UILabel()
         label.text = L10n.bonusesLabel
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 20)
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -55,7 +58,7 @@ class AddBonusesViewController: UIViewController, AddBonusesViewControllerProtoc
         button.setTitle(L10n.addFinancesButton, for: .normal)
         button.titleLabel?.font = UIFont(name: Fonts.exo2Bold, size: 24)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.customBlack
+        button.backgroundColor = UIColor(named: "buttonColor")
         button.addTarget(self, action: #selector(addBonusesButtonAction), for: .touchUpInside)
         return button
     }()
@@ -78,6 +81,7 @@ class AddBonusesViewController: UIViewController, AddBonusesViewControllerProtoc
     
     // MARK: - Private methods
     private func configure() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
         view.addSubview(paymentAmountLabel)
         paymentAmountLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)

@@ -22,6 +22,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont(name: Fonts.exo2Bold, size: 16)
         label.text = "500Р"
+        label.textColor = UIColor(named: "fontColor")
         return label
     }()
     
@@ -29,6 +30,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
        let label = UILabel()
         label.text = "Корм для кошек и собак"
         label.numberOfLines = 0
+        label.textColor = UIColor(named: "fontColor")
         label.font = UIFont(name: Fonts.exo2ExtraLight, size: 12)
         return label
     }()
@@ -48,6 +50,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private methods
     private func configure() {
+        contentView.backgroundColor = UIColor(named: "backgroundColor")
         contentView.layer.cornerRadius = 21
         contentView.clipsToBounds = true
         contentView.layer.borderWidth = 0.4
