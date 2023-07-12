@@ -118,6 +118,7 @@ extension AddBonusesViewController {
     
     @objc func addBonusesButtonAction() {
         if let bonusesText = bonusesTextField.text, let bonuses = Int(bonusesText) {
+            print(bonuses)
             output.addBonuses(amount: bonuses)
         } else {
             showAlert(alertTitle: "Error", alertMessage: "Bonuces can't be added!")

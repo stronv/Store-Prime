@@ -22,6 +22,7 @@ class AuthenticationManager: AuthenticationManagerProtocol {
             case let .success(response):
                 if let authCreds = try? JSONDecoder().decode(Authentication.self, from: response.data) {
                     UserDefaults.standard.set(authCreds.accessToken, forKey: "accessToken")
+                    print(authCreds.accessToken)
                     UserDefaults.standard.set(authCreds.refreshToken, forKey: "refreshToken")
                     return completion(.success(authCreds))
                 } else if let error = try? JSONDecoder().decode(GenericError.self, from: response.data) {

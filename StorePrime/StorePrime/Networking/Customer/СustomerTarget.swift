@@ -59,7 +59,7 @@ extension СustomerTarget: TargetType {
         case .updateCustomer(_, let token):
             return ["Content-Type": "application/json", "Authorization": token]
         case .addBonuses(_, let token):
-            return ["Content-Type": "application/json", "Authorization": token]
+            return ["Content-Type": "application/json", "Authorization": "Bearer \(token)"]
         }
     }
 }

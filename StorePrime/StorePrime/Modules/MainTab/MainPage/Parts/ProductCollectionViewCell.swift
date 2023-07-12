@@ -46,6 +46,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         configure()
     }
     
+    // MARK: - Private methods
     private func configure() {
         contentView.layer.cornerRadius = 21
         contentView.clipsToBounds = true

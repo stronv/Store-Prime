@@ -62,7 +62,7 @@ class MainPageViewController: UIViewController, MainPageViewControllerProtocol {
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.top.equalTo(searchView.snp.bottom).offset(30)
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
 }

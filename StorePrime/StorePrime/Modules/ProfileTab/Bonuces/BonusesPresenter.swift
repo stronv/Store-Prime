@@ -22,7 +22,8 @@ class BonusesPresenter: BonusesPresenterProtocol {
     }
     
     func addBonuses(amount: Int) {
-        if let token = UserDefaults.standard.string(forKey: "refreshToken") {
+        if let token = UserDefaults.standard.string(forKey: "accessToken") {
+            print(token)
             customerManager.addBonuses(amount: amount, token: token) { result in
                 switch result {
                 case .success(let customer):

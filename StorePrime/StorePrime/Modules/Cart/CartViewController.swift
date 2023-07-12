@@ -86,6 +86,7 @@ class CartViewController: UIViewController, CartViewControllerProtocol {
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(output.prdouctsInCart.count)
         return output.prdouctsInCart.count
     }
     
@@ -137,6 +138,7 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension CartViewController {
     func reloadData() {
         collectionView.reloadData()
+        print(output.prdouctsInCart.count)
     }
     
     func configureAmonut(amount: Double) {

@@ -9,6 +9,7 @@ import Foundation
 
 protocol OrdersPresenterProtocol {
     func viewDidLoadEvent()
+    var orders: [Order] { get }
 }
 
 class OrdersPresenter: OrdersPresenterProtocol {
@@ -25,17 +26,17 @@ class OrdersPresenter: OrdersPresenterProtocol {
     var orders: [Order] = []
     
     private func obtainOrders() {
-        if let token = UserDefaults.standard.string(forKey: "refreshToken") {
+        if let token = UserDefaults.standard.string(forKey: "accessToken") {
             ordersManager.getOrders(token: token) { result in
                 switch result {
                 case .success(let orders):
                     self.orders = orders
-                    print(orders)
+                    print(" Orders: \(orders)")
+                    self.view?.refreshOrders()
                     print("Orders get successfully!")
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
-                
             }
         }
     }

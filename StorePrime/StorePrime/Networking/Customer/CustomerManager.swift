@@ -63,6 +63,7 @@ final class CustomerManager: CustomerManagerProtocol {
             switch result {
             case let .success(response):
                 if let customer = try? JSONDecoder().decode(ResponceCustomer.self, from: response.data) {
+                    print(customer)
                     return completion(.success(customer))
                 } else if let error = try? JSONDecoder().decode(GenericError.self, from: response.data) {
                     return completion(.failure(error))

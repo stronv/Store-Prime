@@ -33,7 +33,7 @@ class CartPresenter: CartPresenterProtocol {
                 case .success(let products):
                     self.prdouctsInCart = products
                     self.view?.reloadData()
-                    print(products)
+                    print(self.prdouctsInCart)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -66,7 +66,8 @@ class CartPresenter: CartPresenterProtocol {
             orderManager.createOrder(productsIdFromCart: productsId, token: token) { result in
                 switch result {
                 case .success(let order):
-                    // TODO: - Create alert with messages
+                    self.getProductsInCart()
+                    self.view?.reloadData()
                     print("Order createt successfully! Your order is: \(order)")
                 case .failure(let error):
                     print(error.localizedDescription)

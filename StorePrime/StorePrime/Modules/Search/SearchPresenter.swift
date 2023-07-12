@@ -19,4 +19,6 @@ class SearchPresenter: SerachPresenterProtocol {
         self.moduleOutput = moduleOutput
         self.view = view
     }
+    
+    var categories: [String] = [ "Зоотовары", "Игрушки", "Продукты", "Цветы", "Еще что-то"]
 }

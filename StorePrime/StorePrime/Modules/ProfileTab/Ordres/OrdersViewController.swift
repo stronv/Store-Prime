@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol OrdersViewControllerProtocol: AnyObject {
-    
+    func refreshOrders()
 }
 
 class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
@@ -33,7 +33,7 @@ class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
     }
     
     // MARK: - MVP Properties
-    var output: OrdersPresenterProtocol!
+    var output: OrdersPresenter!
     
     // MARK: - Private methods
     private func configure() {
@@ -54,7 +54,7 @@ class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension OrdersViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        return output.orders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,11 +64,19 @@ extension OrdersViewController: UICollectionViewDelegate, UICollectionViewDataSo
         else {
             fatalError("Couldn't register cell")
         }
+        let order = output.orders[indexPath.row]
+        cell.cnfigureOrderCell(order: order)
         cell.backgroundColor = .clear
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.width/2)
+    }
+}
+
+extension OrdersViewController {
+    func refreshOrders() {
+        collectionView.reloadData()
     }
 }
