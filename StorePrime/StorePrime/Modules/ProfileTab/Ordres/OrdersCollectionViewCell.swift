@@ -90,7 +90,6 @@ class OrdersCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 37
         contentView.layer.borderColor = UIColor.boarderColor.cgColor
         contentView.layer.borderWidth = 1
-        contentView.backgroundColor = .white
         
         mainStackView.snp.makeConstraints { make in
             make.leading.equalTo(contentView.snp_leadingMargin).offset(21)
@@ -115,5 +114,7 @@ class OrdersCollectionViewCell: UICollectionViewCell {
 extension OrdersCollectionViewCell {
     func cnfigureOrderCell(order: Order) {
         orderNumberLabel.text = order.product.title
+        orderAmountLabel.text = "\(order.product.price) Р"
+        orderStatusLabel.text = order.status.uppercased()
     }
 }

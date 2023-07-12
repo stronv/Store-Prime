@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol ProfileViewControllerProtocol: AnyObject {
-    
+    func configureProfileView(customer: ResponceCustomer)
 }
 
 class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
@@ -22,14 +22,12 @@ class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Name"
         label.font = UIFont(name: Fonts.exo2Bold, size: 16)
         return label
     }()
     
     private let surnameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Surname"
         label.font = UIFont(name: Fonts.exo2Bold, size: 16)
         return label
     }()
@@ -77,7 +75,9 @@ class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
         super.viewDidLoad()
         financeView.delegate = self
         purchasesView.delegate = self
+        output.getCustomer()
         configure()
+        
     }
     
     // MARK: - MVP Properties

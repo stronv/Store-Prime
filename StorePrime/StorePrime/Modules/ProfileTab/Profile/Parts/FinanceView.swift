@@ -25,7 +25,6 @@ class FinanceView: UIView {
     
     private let bonusesLabel: UILabel = {
         let label = UILabel()
-        label.text = "900 \(L10n.bonusesLabel)"
         label.font = UIFont(name: Fonts.exo2Bold, size: 32)
         return label
     }()
@@ -90,6 +89,6 @@ extension FinanceView {
 // MARK: - Public Methods
 extension FinanceView {
     func configureFinanceView(customer: ResponceCustomer) {
-        bonusesLabel.text = "\(customer.cardBalance) \(L10n.bonusesLabel)"
+        bonusesLabel.text = "\(Int(customer.cardBalance ?? 100)) \(L10n.bonusesLabel)"
     }
 }

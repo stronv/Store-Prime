@@ -13,6 +13,7 @@ protocol ProfilePresenterProtocol {
     func showChangeProfile()
     func showOrders()
     func signOut()
+    func getCustomer()
 }
 
 class ProfilePresenter: ProfilePresenterProtocol {
@@ -67,6 +68,7 @@ extension ProfilePresenter {
                 switch result {
                 case .success(let customer):
                     self.customer = customer
+                    self.view?.configureProfileView(customer: customer)
                     print("Customer get successfully")
                 case.failure(let error):
                     print(error.localizedDescription)

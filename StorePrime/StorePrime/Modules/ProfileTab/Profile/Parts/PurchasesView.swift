@@ -33,7 +33,7 @@ class PurchasesView: UIView {
         button.contentHorizontalAlignment = .left
         button.layer.borderColor = UIColor.boarderColor.cgColor
         button.layer.borderWidth = 1
-        button.titleLabel?.textColor = UIColor(named: "fontColor")
+        button.setTitleColor(UIColor(named: "fontColor"), for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 0)
         button.addTarget(self, action: #selector(ordersButtonAction), for: .touchUpInside)
         return button

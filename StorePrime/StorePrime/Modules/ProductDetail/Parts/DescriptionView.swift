@@ -66,8 +66,8 @@ class DescriptionView: UIView {
     
     // MARK: - Private metohds
     private func configure() {
-        addSubview(titleLabel)
         backgroundColor = UIColor(named: "backgroundColor")
+        addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(25)
             make.leading.equalToSuperview().offset(17)
@@ -98,8 +98,6 @@ class DescriptionView: UIView {
             make.leading.equalToSuperview().offset(17)
             make.trailing.equalToSuperview().inset(17)
         }
-        
-        backgroundColor = .white
     }
 }
 

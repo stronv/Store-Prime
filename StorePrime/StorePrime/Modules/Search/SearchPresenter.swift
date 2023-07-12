@@ -20,5 +20,5 @@ class SearchPresenter: SerachPresenterProtocol {
         self.view = view
     }
     
-    var categories: [String] = [ "Зоотовары", "Игрушки", "Продукты", "Цветы", "Еще что-то"]
+    var categories: [String] = [ "Зоотовары", "Игрушки", "Продукты", "Цветы", "Зоотовары", "Игрушки", "Продукты", "Цветы", "Зоотовары", "Игрушки", "Продукты", "Цветы"]
 }

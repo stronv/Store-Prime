@@ -55,6 +55,7 @@ class CartPresenter: CartPresenterProtocol {
     }
     
     func viewDidLoadEvent() {
+        checkUserState()
         getProductsInCart()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.countAmount()

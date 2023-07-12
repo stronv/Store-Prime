@@ -42,7 +42,7 @@ extension MainPagePresenter {
             }
         }
         
-        productManager.getRandomProducts(amount: 5) { result in
+        productManager.getRandomProducts(amount: 3) { result in
             switch result {
             case .success(let randomProducts):
                 self.randomProducts = randomProducts

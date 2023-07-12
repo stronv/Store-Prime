@@ -41,7 +41,6 @@ class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
         view.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-        view.backgroundColor = .white
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -49,6 +48,9 @@ class OrdersViewController: UIViewController, OrdersViewControllerProtocol {
             make.trailing.equalToSuperview().inset(16)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
+        
+        let backButton = createCustomButton(imageName: "backButton", selector: #selector(backButtonAction))
+        navigationItem.leftBarButtonItem = backButton
     }
 }
 
@@ -67,7 +69,6 @@ extension OrdersViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         let order = output.orders[indexPath.row]
         cell.cnfigureOrderCell(order: order)
-        cell.backgroundColor = .clear
         return cell
     }
     
@@ -76,8 +77,16 @@ extension OrdersViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
+// MARK: - Public methods
 extension OrdersViewController {
     func refreshOrders() {
         collectionView.reloadData()
+    }
+}
+
+// MARK: - Objc functions
+extension OrdersViewController {
+    @objc func backButtonAction() {
+        navigationController?.popViewController(animated: true)
     }
 }
